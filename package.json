@@ -1,0 +1,13 @@
+{
+  "name": "mlb-stats-typescript-api",
+  "version": "1.0.0",
+  "description": "Typescript interface for the MLB Stats API",
+  "main": "index.js",
+  "types": "index.d.js",
+  "scripts": {
+    "prepare": "tsc"
+  },
+  "keywords": [],
+  "author": "Nathanael Mathieu",
+  "license": "ISC"
+}
