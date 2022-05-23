@@ -83,7 +83,7 @@ export class GameService {
      */
     public static liveGameV1(
         gamePk: string,
-        options: {
+        options?: {
             timecode?: string,
             hydrate?: any,
             fields?: Array<string>,
@@ -96,9 +96,9 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': options.timecode,
-                'hydrate': options.hydrate,
-                'fields': options.fields,
+                'timecode': options?.timecode,
+                'hydrate': options?.hydrate,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -260,7 +260,7 @@ export class GameService {
      * @throws ApiError
      */
     public static traditionalChanges(
-        options: {
+        options?: {
             updatedSince?: string,
             gamePks?: string,
             gameTypes?: number,
@@ -274,13 +274,13 @@ export class GameService {
             method: 'GET',
             url: '/api/v1/game/changes',
             query: {
-                'updatedSince': options.updatedSince,
-                'gamePks': options.gamePks,
-                'gameTypes': options.gameTypes,
-                'sportId': options.sportId,
-                'fields': options.fields,
-                'limit': options.limit,
-                'offset': options.offset,
+                'updatedSince': options?.updatedSince,
+                'gamePks': options?.gamePks,
+                'gameTypes': options?.gameTypes,
+                'sportId': options?.sportId,
+                'fields': options?.fields,
+                'limit': options?.limit,
+                'offset': options?.offset,
             },
             errors: {
                 401: `Unauthorized`,
@@ -369,7 +369,7 @@ export class GameService {
      * @throws ApiError
      */
     public static updateStatcastGames(
-        options: {
+        options?: {
             gameModeId?: number,
             timecode?: string,
             limit?: string,
@@ -386,16 +386,16 @@ export class GameService {
             method: 'GET',
             url: '/api/v1/game/analytics/game',
             query: {
-                'gameModeId': options.gameModeId,
-                'timecode': options.timecode,
-                'limit': options.limit,
-                'lastUpdatedTime/lastMetricsUpdatedTime/lastVideoUpdatedTime': options.lastUpdatedTimeLastMetricsUpdatedTimeLastVideoUpdatedTime,
-                'isNonStatcast': options.isNonStatcast,
-                'offset': options.offset,
-                'season': options.season,
-                'sportId': options.sportId,
-                'gameType': options.gameType,
-                'fields': options.fields,
+                'gameModeId': options?.gameModeId,
+                'timecode': options?.timecode,
+                'limit': options?.limit,
+                'lastUpdatedTime/lastMetricsUpdatedTime/lastVideoUpdatedTime': options?.lastUpdatedTimeLastMetricsUpdatedTimeLastVideoUpdatedTime,
+                'isNonStatcast': options?.isNonStatcast,
+                'offset': options?.offset,
+                'season': options?.season,
+                'sportId': options?.sportId,
+                'gameType': options?.gameType,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -486,7 +486,7 @@ export class GameService {
      * @throws ApiError
      */
     public static updateGameGuids(
-        options: {
+        options?: {
             gameModeId?: number,
             timecode?: string,
             limit?: string,
@@ -502,15 +502,15 @@ export class GameService {
             method: 'GET',
             url: '/api/v1/game/analytics/guids',
             query: {
-                'gameModeId': options.gameModeId,
-                'timecode': options.timecode,
-                'limit': options.limit,
-                'sortBy': options.sortBy,
-                'offset': options.offset,
-                'season': options.season,
-                'sportId': options.sportId,
-                'gameType': options.gameType,
-                'fields': options.fields,
+                'gameModeId': options?.gameModeId,
+                'timecode': options?.timecode,
+                'limit': options?.limit,
+                'sortBy': options?.sortBy,
+                'offset': options?.offset,
+                'season': options?.season,
+                'sportId': options?.sportId,
+                'gameType': options?.gameType,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -604,7 +604,7 @@ export class GameService {
      */
     public static statcast(
         gamePk: string,
-        options: {
+        options?: {
             gameModeId?: number,
             lastUpdatedTime?: string,
             lastMetricsUpdatedTime?: string,
@@ -624,16 +624,16 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'gameModeId': options.gameModeId,
-                'lastUpdatedTime': options.lastUpdatedTime,
-                'lastMetricsUpdatedTime': options.lastMetricsUpdatedTime,
-                'lastVideoUpdatedTime': options.lastVideoUpdatedTime,
-                'isPitch': options.isPitch,
-                'isHit': options.isHit,
-                'isPickoff': options.isPickoff,
-                'hydrate': options.hydrate,
-                'parsed/raw': options.parsedRaw,
-                'fields': options.fields,
+                'gameModeId': options?.gameModeId,
+                'lastUpdatedTime': options?.lastUpdatedTime,
+                'lastMetricsUpdatedTime': options?.lastMetricsUpdatedTime,
+                'lastVideoUpdatedTime': options?.lastVideoUpdatedTime,
+                'isPitch': options?.isPitch,
+                'isHit': options?.isHit,
+                'isPickoff': options?.isPickoff,
+                'hydrate': options?.hydrate,
+                'parsed/raw': options?.parsedRaw,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -694,7 +694,7 @@ export class GameService {
     public static statcastGuids(
         gamePk: string,
         guid: string,
-        options: {
+        options?: {
             hydrate?: string,
             fields?: Array<string>,
         }
@@ -707,8 +707,8 @@ export class GameService {
                 'GUID': guid,
             },
             query: {
-                'hydrate': options.hydrate,
-                'fields': options.fields,
+                'hydrate': options?.hydrate,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -853,7 +853,7 @@ export class GameService {
      */
     public static getWinProbability(
         gamePk: number,
-        options: {
+        options?: {
             timecode?: string,
             fields?: Array<string>,
         }
@@ -865,8 +865,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': options.timecode,
-                'fields': options.fields,
+                'timecode': options?.timecode,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -912,7 +912,7 @@ export class GameService {
      */
     public static boxscore(
         gamePk: number,
-        options: {
+        options?: {
             timecode?: string,
             fields?: Array<string>,
         }
@@ -924,8 +924,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': options.timecode,
-                'fields': options.fields,
+                'timecode': options?.timecode,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -966,7 +966,7 @@ export class GameService {
      */
     public static content(
         gamePk: number,
-        options: {
+        options?: {
             highlightLimit?: number,
         }
     ): CancelablePromise<any> {
@@ -977,7 +977,7 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'highlightLimit': options.highlightLimit,
+                'highlightLimit': options?.highlightLimit,
             },
             errors: {
                 401: `Unauthorized`,
@@ -1024,7 +1024,7 @@ export class GameService {
      */
     public static colorFeed(
         gamePk: string,
-        options: {
+        options?: {
             timecode?: string,
             fields?: Array<string>,
         }
@@ -1036,8 +1036,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': options.timecode,
-                'fields': options.fields,
+                'timecode': options?.timecode,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -1186,8 +1186,10 @@ export class GameService {
      */
     public static linescore(
         gamePk: number,
-        timecode?: string,
-        fields?: Array<string>,
+        options?: {
+            timecode?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<Linescore> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -1196,8 +1198,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': timecode,
-                'fields': fields,
+                'timecode': options?.timecode,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -1244,7 +1246,7 @@ export class GameService {
      */
     public static playByPlay(
         gamePk: number,
-        options: {
+        options?: {
             timecode?: string,
             fields?: Array<string>,
         }
@@ -1256,8 +1258,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': options.timecode,
-                'fields': options.fields,
+                'timecode': options?.timecode,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,

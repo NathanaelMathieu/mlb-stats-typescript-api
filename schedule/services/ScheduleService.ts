@@ -253,7 +253,7 @@ export class ScheduleService {
     public static schedule(
         sportId: number,
         gamePks: number,
-        options: {
+        options?: {
             scheduleType?: string,
             timecode?: string,
             eventTypes?: string,
@@ -275,23 +275,23 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/',
             query: {
-                'scheduleType': options.scheduleType,
-                'timecode': options.timecode,
-                'eventTypes': options.eventTypes,
-                'scheduleEventTypes': options.scheduleEventTypes,
-                'hydrate': options.hydrate,
-                'teamId': options.teamId,
-                'leagueId': options.leagueId,
+                'scheduleType': options?.scheduleType,
+                'timecode': options?.timecode,
+                'eventTypes': options?.eventTypes,
+                'scheduleEventTypes': options?.scheduleEventTypes,
+                'hydrate': options?.hydrate,
+                'teamId': options?.teamId,
+                'leagueId': options?.leagueId,
                 'sportId': sportId,
                 'gamePks': gamePks,
-                'venueIds': options.venueIds,
-                'gameTypes': options.gameTypes,
-                'date': options.date,
-                'startDate': options.startDate,
-                'endDate': options.endDate,
-                'opponentId': options.opponentId,
-                'useLatestGames': options.useLatestGames,
-                'fields': options.fields,
+                'venueIds': options?.venueIds,
+                'gameTypes': options?.gameTypes,
+                'date': options?.date,
+                'startDate': options?.startDate,
+                'endDate': options?.endDate,
+                'opponentId': options?.opponentId,
+                'useLatestGames': options?.useLatestGames,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -365,7 +365,7 @@ export class ScheduleService {
         date: string,
         startDate: string,
         endDate: string,
-        options: {teamId?: number,
+        options?: {teamId?: number,
             sportId?: string,
             hydrate?: string,
             fields?: Array<string>
@@ -379,10 +379,10 @@ export class ScheduleService {
                 'date': date,
                 'startDate': startDate,
                 'endDate': endDate,
-                'teamId': options.teamId,
-                'sportId': options.sportId,
-                'hydrate': options.hydrate,
-                'fields': options.fields,
+                'teamId': options?.teamId,
+                'sportId': options?.sportId,
+                'hydrate': options?.hydrate,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -538,7 +538,7 @@ export class ScheduleService {
      */
     public static tieGames(
         season: string,
-        options: {
+        options?: {
             gameTypes?: string,
             hydrate?: string,
             fields?: Array<string>,
@@ -548,10 +548,10 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/games/tied',
             query: {
-                'gameTypes': options.gameTypes,
+                'gameTypes': options?.gameTypes,
                 'season': season,
-                'hydrate': options.hydrate,
-                'fields': options.fields,
+                'hydrate': options?.hydrate,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -716,7 +716,7 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static postseasonSchedule(
-        options: {
+        options?: {
             gameTypes?: string,
             seriesNumber?: number,
             teamId?: number,
@@ -730,13 +730,13 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/postseason',
             query: {
-                'gameTypes': options.gameTypes,
-                'seriesNumber': options.seriesNumber,
-                'teamId': options.teamId,
-                'sportId': options.sportId,
-                'season': options.season,
-                'hydrate': options.hydrate,
-                'fields': options.fields,
+                'gameTypes': options?.gameTypes,
+                'seriesNumber': options?.seriesNumber,
+                'teamId': options?.teamId,
+                'sportId': options?.sportId,
+                'season': options?.season,
+                'hydrate': options?.hydrate,
+                'fields': options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -787,7 +787,7 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static postseasonScheduleSeries(
-        options: {
+        options?: {
             gameTypes?: string,
             seriesNumber?: number,
             teamId?: number,
@@ -800,12 +800,12 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/postseason/series',
             query: {
-                'gameTypes': options.gameTypes,
-                'seriesNumber':  options.seriesNumber,
-                'teamId':  options.teamId,
-                'sportId':  options.sportId,
-                'season':  options.season,
-                'fields':  options.fields,
+                'gameTypes': options?.gameTypes,
+                'seriesNumber':  options?.seriesNumber,
+                'teamId':  options?.teamId,
+                'sportId':  options?.sportId,
+                'season':  options?.season,
+                'fields':  options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -961,7 +961,7 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static tuneIn(
-        options: {        teamId?: number,
+        options?: {        teamId?: number,
         sportId?: string,
         season?: string,
         hydrate?: string,
@@ -972,11 +972,11 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/postseason/tuneIn',
             query: {
-                'teamId':  options.teamId,
-                'sportId':  options.sportId,
-                'season':  options.season,
-                'hydrate':  options.hydrate,
-                'fields':  options.fields,
+                'teamId':  options?.teamId,
+                'sportId':  options?.sportId,
+                'season':  options?.season,
+                'hydrate':  options?.hydrate,
+                'fields':  options?.fields,
             },
             errors: {
                 401: `Unauthorized`,
