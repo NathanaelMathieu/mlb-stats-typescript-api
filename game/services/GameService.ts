@@ -275,7 +275,7 @@ export class GameService {
             url: '/api/v1/game/changes',
             query: {
                 'updatedSince': options?.updatedSince,
-                'gamePks': options?.gamePks,
+                'gamePks': options?.gamePks?.toString(),
                 'gameTypes': options?.gameTypes,
                 'sportId': options?.sportId,
                 'fields': options?.fields,

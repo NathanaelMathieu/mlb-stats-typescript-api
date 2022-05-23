@@ -251,8 +251,8 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static schedule(
-        sportId: number,
-        gamePks: number,
+        sportId?: number,
+        gamePks?: Array<number>,
         options?: {
             scheduleType?: string,
             timecode?: string,
@@ -262,7 +262,7 @@ export class ScheduleService {
             teamId?: number,
             leagueId?: number,
             venueIds?: number,
-            gameTypes?: string,
+            gameTypes?: Array<string>,
             date?: string,
             startDate?: string,
             endDate?: string,
@@ -283,7 +283,7 @@ export class ScheduleService {
                 'teamId': options?.teamId,
                 'leagueId': options?.leagueId,
                 'sportId': sportId,
-                'gamePks': gamePks,
+                'gamePks': gamePks?.toString(),
                 'venueIds': options?.venueIds,
                 'gameTypes': options?.gameTypes,
                 'date': options?.date,
@@ -361,7 +361,7 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static scheduleTrackingEvents(
-        gamePks: number,
+        gamePks: Array<number>,
         date: string,
         startDate: string,
         endDate: string,
@@ -375,7 +375,7 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/trackingEvents',
             query: {
-                'gamePks': gamePks,
+                'gamePks': gamePks.toString(),
                 'date': date,
                 'startDate': startDate,
                 'endDate': endDate,
@@ -539,7 +539,7 @@ export class ScheduleService {
     public static tieGames(
         season: string,
         options?: {
-            gameTypes?: string,
+            gameTypes?: Array<string>,
             hydrate?: string,
             fields?: Array<string>,
         }
@@ -548,7 +548,7 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/games/tied',
             query: {
-                'gameTypes': options?.gameTypes,
+                'gameTypes': options?.gameTypes?.toString(),
                 'season': season,
                 'hydrate': options?.hydrate,
                 'fields': options?.fields,
@@ -717,7 +717,7 @@ export class ScheduleService {
      */
     public static postseasonSchedule(
         options?: {
-            gameTypes?: string,
+            gameTypes?: Array<string>,
             seriesNumber?: number,
             teamId?: number,
             sportId?: string,
@@ -730,7 +730,7 @@ export class ScheduleService {
             method: 'GET',
             url: '/api/v1/schedule/postseason',
             query: {
-                'gameTypes': options?.gameTypes,
+                'gameTypes': options?.gameTypes?.toString(),
                 'seriesNumber': options?.seriesNumber,
                 'teamId': options?.teamId,
                 'sportId': options?.sportId,
@@ -788,7 +788,7 @@ export class ScheduleService {
      */
     public static postseasonScheduleSeries(
         options?: {
-            gameTypes?: string,
+            gameTypes?: Array<string>,
             seriesNumber?: number,
             teamId?: number,
             sportId?: string,
@@ -961,13 +961,14 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static tuneIn(
-        options?: {        teamId?: number,
-        sportId?: string,
-        season?: string,
-        hydrate?: string,
-        fields?: Array<string>,
-
-}    ): CancelablePromise<ScheduleRestObject> {
+        options?: {
+            teamId?: number,
+            sportId?: string,
+            season?: string,
+            hydrate?: string,
+            fields?: Array<string>,
+        }
+    ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/schedule/postseason/tuneIn',
