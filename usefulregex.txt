@@ -4,3 +4,8 @@ $1        options: {
 $2
 }
 
+
+Move stuff that was wrongly identified
+([a-z]+s:\s)([a-z]+),
+
+$1Array<$2>,
