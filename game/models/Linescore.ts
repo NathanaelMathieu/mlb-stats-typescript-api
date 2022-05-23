@@ -10,12 +10,7 @@ export type Linescore = {
   inningHalf?: string,
   isTopInning?: false,
   scheduledInnings?: number,
-  innings?: [ {
-    num?: number,
-    ordinalNum?: string,
-    home?: LinescoreTeamSummary,
-    away?: LinescoreTeamSummary
-  } ],
+  innings?: Array<LinescoreInning>,
   teams?: {
     home?: LinescoreTeamSummary,
     away?: LinescoreTeamSummary
@@ -56,6 +51,13 @@ export type Linescore = {
   balls?: number,
   strikes?: number,
   outs?: number,
+};
+
+export type LinescoreInning = {
+  num?: number,
+  ordinalNum?: string,
+  home?: LinescoreTeamSummary,
+  away?: LinescoreTeamSummary
 };
 
 export type LinescorePlayer = {
