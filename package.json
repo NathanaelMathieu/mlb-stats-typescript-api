@@ -1,6 +1,6 @@
 {
   "name": "mlb-stats-typescript-api",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Typescript interface for the MLB Stats API",
   "main": "output/index.js",
   "types": "output/index.d.js",
