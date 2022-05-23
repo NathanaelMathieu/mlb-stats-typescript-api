@@ -83,9 +83,11 @@ export class GameService {
      */
     public static liveGameV1(
         gamePk: string,
-        timecode?: string,
-        hydrate?: any,
-        fields?: Array<string>,
+        options: {
+            timecode?: string,
+            hydrate?: any,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<GameRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -94,9 +96,9 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': timecode,
-                'hydrate': hydrate,
-                'fields': fields,
+                'timecode': options.timecode,
+                'hydrate': options.hydrate,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -258,25 +260,27 @@ export class GameService {
      * @throws ApiError
      */
     public static traditionalChanges(
-        updatedSince?: string,
-        gamePks?: string,
-        gameTypes?: number,
-        sportId?: number,
-        fields?: Array<string>,
-        limit?: string,
-        offset?: string,
+        options: {
+            updatedSince?: string,
+            gamePks?: string,
+            gameTypes?: number,
+            sportId?: number,
+            fields?: Array<string>,
+            limit?: string,
+            offset?: string,
+        }
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/game/changes',
             query: {
-                'updatedSince': updatedSince,
-                'gamePks': gamePks,
-                'gameTypes': gameTypes,
-                'sportId': sportId,
-                'fields': fields,
-                'limit': limit,
-                'offset': offset,
+                'updatedSince': options.updatedSince,
+                'gamePks': options.gamePks,
+                'gameTypes': options.gameTypes,
+                'sportId': options.sportId,
+                'fields': options.fields,
+                'limit': options.limit,
+                'offset': options.offset,
             },
             errors: {
                 401: `Unauthorized`,
@@ -365,31 +369,33 @@ export class GameService {
      * @throws ApiError
      */
     public static updateStatcastGames(
-        gameModeId?: number,
-        timecode?: string,
-        limit?: string,
-        lastUpdatedTimeLastMetricsUpdatedTimeLastVideoUpdatedTime?: string,
-        isNonStatcast?: boolean,
-        offset?: string,
-        season?: string,
-        sportId?: string,
-        gameType?: string,
-        fields?: Array<string>,
+        options: {
+            gameModeId?: number,
+            timecode?: string,
+            limit?: string,
+            lastUpdatedTimeLastMetricsUpdatedTimeLastVideoUpdatedTime?: string,
+            isNonStatcast?: boolean,
+            offset?: string,
+            season?: string,
+            sportId?: string,
+            gameType?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/game/analytics/game',
             query: {
-                'gameModeId': gameModeId,
-                'timecode': timecode,
-                'limit': limit,
-                'lastUpdatedTime/lastMetricsUpdatedTime/lastVideoUpdatedTime': lastUpdatedTimeLastMetricsUpdatedTimeLastVideoUpdatedTime,
-                'isNonStatcast': isNonStatcast,
-                'offset': offset,
-                'season': season,
-                'sportId': sportId,
-                'gameType': gameType,
-                'fields': fields,
+                'gameModeId': options.gameModeId,
+                'timecode': options.timecode,
+                'limit': options.limit,
+                'lastUpdatedTime/lastMetricsUpdatedTime/lastVideoUpdatedTime': options.lastUpdatedTimeLastMetricsUpdatedTimeLastVideoUpdatedTime,
+                'isNonStatcast': options.isNonStatcast,
+                'offset': options.offset,
+                'season': options.season,
+                'sportId': options.sportId,
+                'gameType': options.gameType,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -480,29 +486,31 @@ export class GameService {
      * @throws ApiError
      */
     public static updateGameGuids(
-        gameModeId?: number,
-        timecode?: string,
-        limit?: string,
-        sortBy?: string,
-        offset?: string,
-        season?: string,
-        sportId?: string,
-        gameType?: string,
-        fields?: Array<string>,
+        options: {
+            gameModeId?: number,
+            timecode?: string,
+            limit?: string,
+            sortBy?: string,
+            offset?: string,
+            season?: string,
+            sportId?: string,
+            gameType?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/game/analytics/guids',
             query: {
-                'gameModeId': gameModeId,
-                'timecode': timecode,
-                'limit': limit,
-                'sortBy': sortBy,
-                'offset': offset,
-                'season': season,
-                'sportId': sportId,
-                'gameType': gameType,
-                'fields': fields,
+                'gameModeId': options.gameModeId,
+                'timecode': options.timecode,
+                'limit': options.limit,
+                'sortBy': options.sortBy,
+                'offset': options.offset,
+                'season': options.season,
+                'sportId': options.sportId,
+                'gameType': options.gameType,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -596,16 +604,18 @@ export class GameService {
      */
     public static statcast(
         gamePk: string,
-        gameModeId?: number,
-        lastUpdatedTime?: string,
-        lastMetricsUpdatedTime?: string,
-        lastVideoUpdatedTime?: string,
-        isPitch?: string,
-        isHit?: string,
-        isPickoff?: string,
-        hydrate?: string,
-        parsedRaw?: string,
-        fields?: Array<string>,
+        options: {
+            gameModeId?: number,
+            lastUpdatedTime?: string,
+            lastMetricsUpdatedTime?: string,
+            lastVideoUpdatedTime?: string,
+            isPitch?: string,
+            isHit?: string,
+            isPickoff?: string,
+            hydrate?: string,
+            parsedRaw?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -614,16 +624,16 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'gameModeId': gameModeId,
-                'lastUpdatedTime': lastUpdatedTime,
-                'lastMetricsUpdatedTime': lastMetricsUpdatedTime,
-                'lastVideoUpdatedTime': lastVideoUpdatedTime,
-                'isPitch': isPitch,
-                'isHit': isHit,
-                'isPickoff': isPickoff,
-                'hydrate': hydrate,
-                'parsed/raw': parsedRaw,
-                'fields': fields,
+                'gameModeId': options.gameModeId,
+                'lastUpdatedTime': options.lastUpdatedTime,
+                'lastMetricsUpdatedTime': options.lastMetricsUpdatedTime,
+                'lastVideoUpdatedTime': options.lastVideoUpdatedTime,
+                'isPitch': options.isPitch,
+                'isHit': options.isHit,
+                'isPickoff': options.isPickoff,
+                'hydrate': options.hydrate,
+                'parsed/raw': options.parsedRaw,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -684,8 +694,10 @@ export class GameService {
     public static statcastGuids(
         gamePk: string,
         guid: string,
-        hydrate?: string,
-        fields?: Array<string>,
+        options: {
+            hydrate?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -695,8 +707,8 @@ export class GameService {
                 'GUID': guid,
             },
             query: {
-                'hydrate': hydrate,
-                'fields': fields,
+                'hydrate': options.hydrate,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -841,8 +853,10 @@ export class GameService {
      */
     public static getWinProbability(
         gamePk: number,
-        timecode?: string,
-        fields?: Array<string>,
+        options: {
+            timecode?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<Array<PlayRestObject>> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -851,8 +865,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': timecode,
-                'fields': fields,
+                'timecode': options.timecode,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -898,8 +912,10 @@ export class GameService {
      */
     public static boxscore(
         gamePk: number,
-        timecode?: string,
-        fields?: Array<string>,
+        options: {
+            timecode?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<Boxscore> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -908,8 +924,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': timecode,
-                'fields': fields,
+                'timecode': options.timecode,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -950,7 +966,9 @@ export class GameService {
      */
     public static content(
         gamePk: number,
-        highlightLimit?: number,
+        options: {
+            highlightLimit?: number,
+        }
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -959,7 +977,7 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'highlightLimit': highlightLimit,
+                'highlightLimit': options.highlightLimit,
             },
             errors: {
                 401: `Unauthorized`,
@@ -1006,8 +1024,10 @@ export class GameService {
      */
     public static colorFeed(
         gamePk: string,
-        timecode?: string,
-        fields?: Array<string>,
+        options: {
+            timecode?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<string> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -1016,8 +1036,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': timecode,
-                'fields': fields,
+                'timecode': options.timecode,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -1224,8 +1244,10 @@ export class GameService {
      */
     public static playByPlay(
         gamePk: number,
-        timecode?: string,
-        fields?: Array<string>,
+        options: {
+            timecode?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -1234,8 +1256,8 @@ export class GameService {
                 'gamePk': gamePk,
             },
             query: {
-                'timecode': timecode,
-                'fields': fields,
+                'timecode': options.timecode,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,

@@ -253,43 +253,45 @@ export class ScheduleService {
     public static schedule(
         sportId: number,
         gamePks: number,
-        scheduleType?: string,
-        timecode?: string,
-        eventTypes?: string,
-        scheduleEventTypes?: string,
-        hydrate?: string,
-        teamId?: number,
-        leagueId?: number,
-        venueIds?: number,
-        gameTypes?: string,
-        date?: string,
-        startDate?: string,
-        endDate?: string,
-        opponentId?: number,
-        useLatestGames?: boolean,
-        fields?: Array<string>,
+        options: {
+            scheduleType?: string,
+            timecode?: string,
+            eventTypes?: string,
+            scheduleEventTypes?: string,
+            hydrate?: string,
+            teamId?: number,
+            leagueId?: number,
+            venueIds?: number,
+            gameTypes?: string,
+            date?: string,
+            startDate?: string,
+            endDate?: string,
+            opponentId?: number,
+            useLatestGames?: boolean,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/schedule/',
             query: {
-                'scheduleType': scheduleType,
-                'timecode': timecode,
-                'eventTypes': eventTypes,
-                'scheduleEventTypes': scheduleEventTypes,
-                'hydrate': hydrate,
-                'teamId': teamId,
-                'leagueId': leagueId,
+                'scheduleType': options.scheduleType,
+                'timecode': options.timecode,
+                'eventTypes': options.eventTypes,
+                'scheduleEventTypes': options.scheduleEventTypes,
+                'hydrate': options.hydrate,
+                'teamId': options.teamId,
+                'leagueId': options.leagueId,
                 'sportId': sportId,
                 'gamePks': gamePks,
-                'venueIds': venueIds,
-                'gameTypes': gameTypes,
-                'date': date,
-                'startDate': startDate,
-                'endDate': endDate,
-                'opponentId': opponentId,
-                'useLatestGames': useLatestGames,
-                'fields': fields,
+                'venueIds': options.venueIds,
+                'gameTypes': options.gameTypes,
+                'date': options.date,
+                'startDate': options.startDate,
+                'endDate': options.endDate,
+                'opponentId': options.opponentId,
+                'useLatestGames': options.useLatestGames,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -363,10 +365,11 @@ export class ScheduleService {
         date: string,
         startDate: string,
         endDate: string,
-        teamId?: number,
-        sportId?: string,
-        hydrate?: string,
-        fields?: Array<string>,
+        options: {teamId?: number,
+            sportId?: string,
+            hydrate?: string,
+            fields?: Array<string>
+        },
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -376,10 +379,10 @@ export class ScheduleService {
                 'date': date,
                 'startDate': startDate,
                 'endDate': endDate,
-                'teamId': teamId,
-                'sportId': sportId,
-                'hydrate': hydrate,
-                'fields': fields,
+                'teamId': options.teamId,
+                'sportId': options.sportId,
+                'hydrate': options.hydrate,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -535,18 +538,20 @@ export class ScheduleService {
      */
     public static tieGames(
         season: string,
-        gameTypes?: string,
-        hydrate?: string,
-        fields?: Array<string>,
+        options: {
+            gameTypes?: string,
+            hydrate?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/schedule/games/tied',
             query: {
-                'gameTypes': gameTypes,
+                'gameTypes': options.gameTypes,
                 'season': season,
-                'hydrate': hydrate,
-                'fields': fields,
+                'hydrate': options.hydrate,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -711,25 +716,27 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static postseasonSchedule(
-        gameTypes?: string,
-        seriesNumber?: number,
-        teamId?: number,
-        sportId?: string,
-        season?: string,
-        hydrate?: string,
-        fields?: Array<string>,
+        options: {
+            gameTypes?: string,
+            seriesNumber?: number,
+            teamId?: number,
+            sportId?: string,
+            season?: string,
+            hydrate?: string,
+            fields?: Array<string>
+        },
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/schedule/postseason',
             query: {
-                'gameTypes': gameTypes,
-                'seriesNumber': seriesNumber,
-                'teamId': teamId,
-                'sportId': sportId,
-                'season': season,
-                'hydrate': hydrate,
-                'fields': fields,
+                'gameTypes': options.gameTypes,
+                'seriesNumber': options.seriesNumber,
+                'teamId': options.teamId,
+                'sportId': options.sportId,
+                'season': options.season,
+                'hydrate': options.hydrate,
+                'fields': options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -780,23 +787,25 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static postseasonScheduleSeries(
-        gameTypes?: string,
-        seriesNumber?: number,
-        teamId?: number,
-        sportId?: string,
-        season?: string,
-        fields?: Array<string>,
+        options: {
+            gameTypes?: string,
+            seriesNumber?: number,
+            teamId?: number,
+            sportId?: string,
+            season?: string,
+            fields?: Array<string>,
+        }
     ): CancelablePromise<PostseasonScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/schedule/postseason/series',
             query: {
-                'gameTypes': gameTypes,
-                'seriesNumber': seriesNumber,
-                'teamId': teamId,
-                'sportId': sportId,
-                'season': season,
-                'fields': fields,
+                'gameTypes': options.gameTypes,
+                'seriesNumber':  options.seriesNumber,
+                'teamId':  options.teamId,
+                'sportId':  options.sportId,
+                'season':  options.season,
+                'fields':  options.fields,
             },
             errors: {
                 401: `Unauthorized`,
@@ -952,21 +961,22 @@ export class ScheduleService {
      * @throws ApiError
      */
     public static tuneIn(
-        teamId?: number,
+        options: {        teamId?: number,
         sportId?: string,
         season?: string,
         hydrate?: string,
         fields?: Array<string>,
-    ): CancelablePromise<ScheduleRestObject> {
+
+}    ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/schedule/postseason/tuneIn',
             query: {
-                'teamId': teamId,
-                'sportId': sportId,
-                'season': season,
-                'hydrate': hydrate,
-                'fields': fields,
+                'teamId':  options.teamId,
+                'sportId':  options.sportId,
+                'season':  options.season,
+                'hydrate':  options.hydrate,
+                'fields':  options.fields,
             },
             errors: {
                 401: `Unauthorized`,
