@@ -201,6 +201,7 @@ export const sendRequest = async (
     const controller = new AbortController();
 
     const request: RequestInit = {
+        mode: 'no-cors',
         headers,
         body: body ?? formData,
         method: options.method,
