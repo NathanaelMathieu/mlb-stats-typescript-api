@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "npm version patch && npm run build"
   },
   "keywords": [],
   "author": "nmathieu",
