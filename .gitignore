@@ -1,2 +1,4 @@
-*.js
+output/
 *.tgz
+node_modules/
+output/

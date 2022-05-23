@@ -4,10 +4,17 @@
   "description": "Typescript interface for the MLB Stats API",
   "main": "index.js",
   "types": "index.d.js",
+  "dependencies": {
+    "typescript": "^4.6.4"
+  },
   "scripts": {
-    "prepare": "tsc"
+    "build": "tsc -t es5 -d index.ts --outDir output"
   },
   "keywords": [],
   "author": "Nathanael Mathieu",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NathanaelMathieu/mlb-stats-typescript-api.git"
+  }
 }
