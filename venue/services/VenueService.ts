@@ -92,7 +92,7 @@ export class VenueService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/venues',
+            url: '/api/v1/venues',
             query: {
                 'venueIds': venueIds,
                 'sportIds': sportIds,

@@ -268,7 +268,7 @@ export class GameService {
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/changes',
+            url: '/api/v1/game/changes',
             query: {
                 'updatedSince': updatedSince,
                 'gamePks': gamePks,
@@ -378,7 +378,7 @@ export class GameService {
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/analytics/game',
+            url: '/api/v1/game/analytics/game',
             query: {
                 'gameModeId': gameModeId,
                 'timecode': timecode,
@@ -492,7 +492,7 @@ export class GameService {
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/analytics/guids',
+            url: '/api/v1/game/analytics/guids',
             query: {
                 'gameModeId': gameModeId,
                 'timecode': timecode,
@@ -609,7 +609,7 @@ export class GameService {
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/guids',
+            url: '/api/v1/game/{gamePk}/guids',
             path: {
                 'gamePk': gamePk,
             },
@@ -689,7 +689,7 @@ export class GameService {
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/{GUID}/analytics',
+            url: '/api/v1/game/{gamePk}/{GUID}/analytics',
             path: {
                 'gamePk': gamePk,
                 'GUID': guid,
@@ -735,7 +735,7 @@ export class GameService {
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/{GUID}/analytics/skeletalData/files',
+            url: '/api/v1/game/{gamePk}/{GUID}/analytics/skeletalData/files',
             path: {
                 'gamePk': gamePk,
                 'GUID': guid,
@@ -789,7 +789,7 @@ export class GameService {
     ): CancelablePromise<GameContextRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/contextMetrics',
+            url: '/api/v1/game/{gamePk}/contextMetrics',
             path: {
                 'gamePk': gamePk,
             },
@@ -846,7 +846,7 @@ export class GameService {
     ): CancelablePromise<Array<PlayRestObject>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/winProbability',
+            url: '/api/v1/game/{gamePk}/winProbability',
             path: {
                 'gamePk': gamePk,
             },
@@ -903,7 +903,7 @@ export class GameService {
     ): CancelablePromise<Boxscore> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/boxscore',
+            url: '/api/v1/game/{gamePk}/boxscore',
             path: {
                 'gamePk': gamePk,
             },
@@ -954,7 +954,7 @@ export class GameService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/content',
+            url: '/api/v1/game/{gamePk}/content',
             path: {
                 'gamePk': gamePk,
             },
@@ -1011,7 +1011,7 @@ export class GameService {
     ): CancelablePromise<string> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/feed/color',
+            url: '/api/v1/game/{gamePk}/feed/color',
             path: {
                 'gamePk': gamePk,
             },
@@ -1075,7 +1075,7 @@ export class GameService {
     ): CancelablePromise<ResponseEntity> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/feed/color/diffPatch',
+            url: '/api/v1/game/{gamePk}/feed/color/diffPatch',
             path: {
                 'gamePk': gamePk,
             },
@@ -1116,7 +1116,7 @@ export class GameService {
     ): CancelablePromise<string> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/feed/color/timestamps',
+            url: '/api/v1/game/{gamePk}/feed/color/timestamps',
             path: {
                 'gamePk': gamePk,
             },
@@ -1171,7 +1171,7 @@ export class GameService {
     ): CancelablePromise<Linescore> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/linescore',
+            url: '/api/v1/game/{gamePk}/linescore',
             path: {
                 'gamePk': gamePk,
             },
@@ -1229,7 +1229,7 @@ export class GameService {
     ): CancelablePromise<PlayByPlayRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/game/{gamePk}/playByPlay',
+            url: '/api/v1/game/{gamePk}/playByPlay',
             path: {
                 'gamePk': gamePk,
             },

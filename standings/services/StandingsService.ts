@@ -106,7 +106,7 @@ export class StandingsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/standings',
+            url: '/api/v1/standings',
             query: {
                 'leagueId': leagueId,
                 'season': season,

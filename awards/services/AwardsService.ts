@@ -97,7 +97,7 @@ export class AwardsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/awards/{awardId}/recipients',
+            url: '/api/v1/awards/{awardId}/recipients',
             path: {
                 'awardId': awardId,
             },

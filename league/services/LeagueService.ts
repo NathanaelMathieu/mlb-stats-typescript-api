@@ -61,7 +61,7 @@ export class LeagueService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/league',
+            url: '/api/v1/league',
             query: {
                 'sportId': sportId,
                 'leagueIds': leagueIds,
@@ -112,7 +112,7 @@ export class LeagueService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/league/{leagueId}/allStarBallot',
+            url: '/api/v1/league/{leagueId}/allStarBallot',
             path: {
                 'leagueId': leagueId,
             },
@@ -163,7 +163,7 @@ export class LeagueService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/league/{leagueId}/allStarWriteIns',
+            url: '/api/v1/league/{leagueId}/allStarWriteIns',
             path: {
                 'leagueId': leagueId,
             },
@@ -214,7 +214,7 @@ export class LeagueService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/league/{leagueId}/allStarFinalVote',
+            url: '/api/v1/league/{leagueId}/allStarFinalVote',
             path: {
                 'leagueId': leagueId,
             },

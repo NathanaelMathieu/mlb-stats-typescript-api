@@ -48,7 +48,7 @@ export class SportsService {
     ): CancelablePromise<SportsRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/sports',
+            url: '/api/v1/sports',
             query: {
                 'sportId': sportId,
                 'activeStatus': activeStatus,
@@ -107,7 +107,7 @@ export class SportsService {
     ): CancelablePromise<SportsRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/sports/{sportId}',
+            url: '/api/v1/sports/{sportId}',
             path: {
                 'sportId': sportId,
             },
@@ -168,7 +168,7 @@ export class SportsService {
     ): CancelablePromise<PeopleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/sports/{sportId}/players',
+            url: '/api/v1/sports/{sportId}/players',
             path: {
                 'sportId': sportId,
             },

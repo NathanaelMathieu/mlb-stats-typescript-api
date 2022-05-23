@@ -57,7 +57,7 @@ export class JobsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/jobs',
+            url: '/api/v1/jobs',
             query: {
                 'jobType': jobType,
                 'sportId': sportId,
@@ -138,7 +138,7 @@ export class JobsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/jobs/umpires',
+            url: '/api/v1/jobs/umpires',
             query: {
                 'sportId': sportId,
                 'date': date,
@@ -219,7 +219,7 @@ export class JobsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/jobs/datacasters',
+            url: '/api/v1/jobs/datacasters',
             query: {
                 'sportId': sportId,
                 'date': date,
@@ -300,7 +300,7 @@ export class JobsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/jobs/officialScorers',
+            url: '/api/v1/jobs/officialScorers',
             query: {
                 'sportId': sportId,
                 'date': date,

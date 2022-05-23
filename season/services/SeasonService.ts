@@ -44,7 +44,7 @@ export class SeasonService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/seasons',
+            url: '/api/v1/seasons',
             query: {
                 'sportId': sportId,
                 'withGameTypeDates': withGameTypeDates,
@@ -106,7 +106,7 @@ export class SeasonService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/seasons/all',
+            url: '/api/v1/seasons/all',
             query: {
                 'divisionId': divisionId,
                 'leagueId': leagueId,
@@ -163,7 +163,7 @@ export class SeasonService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/seasons/{seasonId}',
+            url: '/api/v1/seasons/{seasonId}',
             path: {
                 'seasonId': seasonId,
             },

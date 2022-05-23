@@ -221,7 +221,7 @@ export class StatsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/stats',
+            url: '/api/v1/stats',
             query: {
                 'stats': stats,
                 'playerPool': playerPool,
@@ -446,7 +446,7 @@ export class StatsService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/stats/metrics',
+            url: '/api/v1/stats/metrics',
             query: {
                 'stats': stats,
                 'group': group,
@@ -742,7 +742,7 @@ export class StatsService {
     ): CancelablePromise<LeagueLeaderContainerRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/stats/leaders',
+            url: '/api/v1/stats/leaders',
             query: {
                 'leaderCategories': leaderCategories,
                 'playerPool': playerPool,
@@ -976,7 +976,7 @@ export class StatsService {
     ): CancelablePromise<StatStreaksRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/stats/streaks',
+            url: '/api/v1/stats/streaks',
             query: {
                 'streakType': streakType,
                 'streakSpan': streakSpan,

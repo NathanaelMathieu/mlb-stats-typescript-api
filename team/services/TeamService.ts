@@ -110,7 +110,7 @@ export class TeamService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams',
+            url: '/api/v1/teams',
             query: {
                 'season': season,
                 'activeStatus': activeStatus,
@@ -166,7 +166,7 @@ export class TeamService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/history',
+            url: '/api/v1/teams/history',
             query: {
                 'teamIds': teamIds,
                 'startSeason': startSeason,
@@ -277,7 +277,7 @@ export class TeamService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/stats',
+            url: '/api/v1/teams/stats',
             query: {
                 'season': season,
                 'sportIds': sportIds,
@@ -417,7 +417,7 @@ export class TeamService {
     ): CancelablePromise<LeagueLeaderContainerRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/stats/leaders',
+            url: '/api/v1/teams/stats/leaders',
             query: {
                 'leaderCategories': leaderCategories,
                 'sitCodes': sitCodes,
@@ -515,7 +515,7 @@ export class TeamService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/affiliates',
+            url: '/api/v1/teams/affiliates',
             query: {
                 'teamIds': teamIds,
                 'sportId': sportId,
@@ -607,7 +607,7 @@ export class TeamService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}',
+            url: '/api/v1/teams/{teamId}',
             path: {
                 'teamId': teamId,
             },
@@ -704,7 +704,7 @@ export class TeamService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/stats',
+            url: '/api/v1/teams/{teamId}/stats',
             path: {
                 'teamId': teamId,
             },
@@ -798,7 +798,7 @@ export class TeamService {
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/affiliates',
+            url: '/api/v1/teams/{teamId}/affiliates',
             path: {
                 'teamId': teamId,
             },
@@ -1014,7 +1014,7 @@ export class TeamService {
     ): CancelablePromise<PeopleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/alumni',
+            url: '/api/v1/teams/{teamId}/alumni',
             path: {
                 'teamId': teamId,
             },
@@ -1074,7 +1074,7 @@ export class TeamService {
     ): CancelablePromise<RosterRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/coaches',
+            url: '/api/v1/teams/{teamId}/coaches',
             path: {
                 'teamId': teamId,
             },
@@ -1129,7 +1129,7 @@ export class TeamService {
     ): CancelablePromise<RosterRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/personnel',
+            url: '/api/v1/teams/{teamId}/personnel',
             path: {
                 'teamId': teamId,
             },
@@ -1378,7 +1378,7 @@ export class TeamService {
     ): CancelablePromise<TeamLeaderContainerRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/leaders',
+            url: '/api/v1/teams/{teamId}/leaders',
             path: {
                 'teamId': teamId,
             },
@@ -1602,7 +1602,7 @@ export class TeamService {
     ): CancelablePromise<RosterRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/roster',
+            url: '/api/v1/teams/{teamId}/roster',
             path: {
                 'teamId': teamId,
             },
@@ -1823,7 +1823,7 @@ export class TeamService {
     ): CancelablePromise<RosterRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/teams/{teamId}/roster/{rosterType}',
+            url: '/api/v1/teams/{teamId}/roster/{rosterType}',
             path: {
                 'teamId': teamId,
                 'rosterType': rosterType,

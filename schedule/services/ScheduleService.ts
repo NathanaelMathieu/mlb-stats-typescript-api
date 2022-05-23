@@ -271,7 +271,7 @@ export class ScheduleService {
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/schedule/',
+            url: '/api/v1/schedule/',
             query: {
                 'scheduleType': scheduleType,
                 'timecode': timecode,
@@ -370,7 +370,7 @@ export class ScheduleService {
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/schedule/trackingEvents',
+            url: '/api/v1/schedule/trackingEvents',
             query: {
                 'gamePks': gamePks,
                 'date': date,
@@ -541,7 +541,7 @@ export class ScheduleService {
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/schedule/games/tied',
+            url: '/api/v1/schedule/games/tied',
             query: {
                 'gameTypes': gameTypes,
                 'season': season,
@@ -721,7 +721,7 @@ export class ScheduleService {
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/schedule/postseason',
+            url: '/api/v1/schedule/postseason',
             query: {
                 'gameTypes': gameTypes,
                 'seriesNumber': seriesNumber,
@@ -789,7 +789,7 @@ export class ScheduleService {
     ): CancelablePromise<PostseasonScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/schedule/postseason/series',
+            url: '/api/v1/schedule/postseason/series',
             query: {
                 'gameTypes': gameTypes,
                 'seriesNumber': seriesNumber,
@@ -960,7 +960,7 @@ export class ScheduleService {
     ): CancelablePromise<ScheduleRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/schedule/postseason/tuneIn',
+            url: '/api/v1/schedule/postseason/tuneIn',
             query: {
                 'teamId': teamId,
                 'sportId': sportId,

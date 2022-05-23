@@ -101,7 +101,7 @@ export class DraftService {
     ): CancelablePromise<BaseballDraftListRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/draft/{year}',
+            url: '/api/v1/draft/{year}',
             path: {
                 'year': year,
             },
@@ -216,7 +216,7 @@ export class DraftService {
     ): CancelablePromise<ProspectListRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/draft/prospects/{year}',
+            url: '/api/v1/draft/prospects/{year}',
             path: {
                 'year': year,
             },
@@ -268,7 +268,7 @@ export class DraftService {
     ): CancelablePromise<BaseballDraftLatestRestObject> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/v1/draft/{year}/latest',
+            url: '/api/v1/draft/{year}/latest',
             path: {
                 'year': year,
             },
