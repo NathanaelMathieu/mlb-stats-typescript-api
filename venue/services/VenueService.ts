@@ -43,7 +43,7 @@ export class VenueService {
      *
      * @param season Insert year to return venue directorial information for a given season.
      * 1. Insert year: https://statsapi.mlb.com/api/v1/venues?season=2021&sportIds=1
-     * 2. Insert years: http://statsapi.mlb.com/api/v1/venues?seasons=1945,2021&sportIds=1
+     * 2. Insert years: https://statsapi.mlb.com/api/v1/venues?seasons=1945,2021&sportIds=1
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute

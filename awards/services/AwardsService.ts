@@ -37,12 +37,12 @@ export class AwardsService {
      * @param sportId Insert a sportId to return a directory of players for a given award in a specific sport.
      * 1. One sportId:  https://statsapi.mlb.com/api/v1/awards/MLBHOF/recipients?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param leagueId Insert leagueId(s) to return a directory of players for a given award in a specific league. Format '103,104'
      * 1. One leagueId: https://statsapi.mlb.com/api/v1/awards/MLBHOF/recipients?leagueId=103
      *
-     * For  a list of all leagueIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all leagueIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param season Insert year(s) to return a directory of players for a given award in a given season.
      * 1. One year: https://statsapi.mlb.com/api/v1/awards/MLBHOF/recipients?season=2017

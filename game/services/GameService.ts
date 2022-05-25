@@ -125,24 +125,24 @@ export class GameService {
      * the same request.  <br/> 6) If data is returned, get a new timeStamp
      * from the response, and use that for the next call as startTimecode.
      * <br></br>
-     * **Required Parameters:** all parameters are required to run this call. If incorrectly called the call will default to http://statsapi.mlb.com/api/v1.1/game/531304/feed/live
+     * **Required Parameters:** all parameters are required to run this call. If incorrectly called the call will default to https://statsapi.mlb.com/api/v1.1/game/531304/feed/live
      * <br></br>
      *
      * ---
      * **Example of call with required parameters:**
      *
-     * http://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_193704&endTimecode=20180823_193711
+     * https://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_193704&endTimecode=20180823_193711
      *
      * @param gamePk Insert gamePk
-     * 1. Insert gamePk: http://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch
+     * 1. Insert gamePk: https://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch
      *
      * @param startTimecode Insert startTimecode. Format:
      * MMDDYYYY_HHMMSS
-     * 1. Insert startTimecode: http://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_193704&endTimecode=20180823_193711
+     * 1. Insert startTimecode: https://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_193704&endTimecode=20180823_193711
      *
      * @param endTimecode Insert endTimecode to complete this call
      * Format: MMDDYYYY_HHMMSS
-     * 1. Insert endTimecode: http://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_193704&endTimecode=20180823_193711
+     * 1. Insert endTimecode: https://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_193704&endTimecode=20180823_193711
      *
      * @returns ResponseEntity OK
      * @throws ApiError
@@ -242,7 +242,7 @@ export class GameService {
      * 1. Insert one sportIds:   https://statsapi.mlb.com/api/v1/game/changes?sportIds=1&updatedSince=2020-03-17T15:34:43
      * 2. Insert multiple sportIds:   https://statsapi.mlb.com/api/v1/game/changes?sportIds=1,16&updatedSince=2020-03-17T15:34:43
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param fields Comma delimited list of specific fields to be returned. Format: topLevelNode, childNode, attribute
      *
@@ -302,13 +302,13 @@ export class GameService {
      * ---
      * **Example of call with required parameters**
      *
-     * http://statsapi.mlb.com/api/v1/analytics/game
+     * https://statsapi.mlb.com/api/v1/analytics/game
      *
      * ---
      *
      * **Example of call with all parameters**
      *
-     * http://statsapi.mlb.com/api/v1/analytics/game?lastMetricsUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&limit=1
+     * https://statsapi.mlb.com/api/v1/analytics/game?lastMetricsUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&limit=1
      *
      * @param gameModeId Insert gameModeId to return timestamps for data corrections made for a specific gameMode. There are 3 different gameModes:
      * 1. 0= Batting Practice
@@ -317,21 +317,21 @@ export class GameService {
      *
      * Insert one gameMode per request. Request default to gameMode 2
      *
-     * 1. Insert BP  gameMode : http://statsapi.mlb.com/api/v1/analytics/game?gameModeId=0
-     * 2. Insert Warm Up gameMode: http://statsapi.mlb.com/api/v1/analytics/game?gameModeId=1
-     * 3. Insert Live gameMode: http://statsapi.mlb.com/api/v1/analytics/game?gameModeId=2
+     * 1. Insert BP  gameMode : https://statsapi.mlb.com/api/v1/analytics/game?gameModeId=0
+     * 2. Insert Warm Up gameMode: https://statsapi.mlb.com/api/v1/analytics/game?gameModeId=1
+     * 3. Insert Live gameMode: https://statsapi.mlb.com/api/v1/analytics/game?gameModeId=2
      *
      * @param timecode Use this parameter to return a snapshot of the data at the specified
      * time.
-     * 1. Insert timecode: http://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2019-05-20T20:33:06.000058Z
+     * 1. Insert timecode: https://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2019-05-20T20:33:06.000058Z
      *
      * @param limit Insert a limit to limit return {Limit 1000}.
-     * 1. Insert limit: http://statsapi.mlb.com/api/v1/analytics/game?limit=10
+     * 1. Insert limit: https://statsapi.mlb.com/api/v1/analytics/game?limit=10
      *
      * @param lastUpdatedTimeLastMetricsUpdatedTimeLastVideoUpdatedTime Sort return based on specific metric. Users can sort by 3 metrics:
-     * 1. lastUpdatedTime - http://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2021-06-19T11:00:00.000000Z&limit=10&offset=0&sortBy=lastUpdatedTime
-     * 2. lastMetricsUpdatedTime - http://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2021-06-19T11:00:00.000000Z&limit=10&offset=0&sortBy=lastMetricsUpdatedTime
-     * 3. lastVideoUpdatedTime- http://statsapi.mlb.com/api/v1/analytics/game?lastVideoUpdatedTime=2021-06-19T11:00:00.000000Z&limit=10&offset=0&sortBy=lastVideoUpdatedTime
+     * 1. lastUpdatedTime - https://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2021-06-19T11:00:00.000000Z&limit=10&offset=0&sortBy=lastUpdatedTime
+     * 2. lastMetricsUpdatedTime - https://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2021-06-19T11:00:00.000000Z&limit=10&offset=0&sortBy=lastMetricsUpdatedTime
+     * 3. lastVideoUpdatedTime- https://statsapi.mlb.com/api/v1/analytics/game?lastVideoUpdatedTime=2021-06-19T11:00:00.000000Z&limit=10&offset=0&sortBy=lastVideoUpdatedTime
      *
      * Each of the 3 metrics map to the following objects
      *
@@ -346,24 +346,24 @@ export class GameService {
      * 3. lastVideoUpdatedTime ~ Timestamp of most recent update made to the video for an individual play from a given game.
      *
      * @param isNonStatcast Insert isNonStatcast to return most recent MiLB games that have been updated with video.
-     * 1. Insert isNonStatcast: http://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2019-06-07&isNonStatcast=true
+     * 1. Insert isNonStatcast: https://statsapi.mlb.com/api/v1/analytics/game?lastUpdatedTime=2019-06-07&isNonStatcast=true
      *
      * @param offset Insert an offset to returns i+1 as the first record in the set of most recent games {Limit 1000} updated since a specific time, specific gameMode.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/game?offset=10
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/game?offset=10
      *
      * @param season Insert season to return all updated Games for a given season.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/game?season=2021
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/game?season=2021
      *
      * @param sportId Insert sportId to return all updated Games for a given sportId.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/game?sportId=11
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/game?sportId=11
      *
      * @param gameType Insert gameType to return all updated Games for a given gameType.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/game?gameType=D
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/game?gameType=D
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute
      *
-     * Example: http://statsapi.mlb.com/api/v1/analytics/game?fields=games,gamePk,metricsUpdatedAt
+     * Example: https://statsapi.mlb.com/api/v1/analytics/game?fields=games,gamePk,metricsUpdatedAt
      *
      * @returns PlayByPlayRestObject OK
      * @throws ApiError
@@ -417,13 +417,13 @@ export class GameService {
      * ---
      * **Example of call with required parameters**
      *
-     * http://statsapi.mlb.com/api/v1/analytics/guids
+     * https://statsapi.mlb.com/api/v1/analytics/guids
      *
      * ---
      *
      * **Example of call with all parameters**
      *
-     * http://statsapi.mlb.com/api/v1/analytics/guids?lastMetricsUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&sortBy=lastMetricsUpdatedTime&limit=1
+     * https://statsapi.mlb.com/api/v1/analytics/guids?lastMetricsUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&sortBy=lastMetricsUpdatedTime&limit=1
      *
      * @param gameModeId Insert gameModeId to return timestamps for data corrections made for a specific gameMode. There are 3 different gameModes:
      * 1. 0= Batting Practice
@@ -432,22 +432,22 @@ export class GameService {
      *
      * Insert one gameMode per request. Request default to gameMode 2
      *
-     * 1. Insert BP  gameMode : http://statsapi.mlb.com/api/v1/analytics/guids?gameModeId=0
-     * 2. Insert Warm Up gameMode: http://statsapi.mlb.com/api/v1/analytics/guids?gameModeId=1
-     * 3. Insert Live gameMode: http://statsapi.mlb.com/api/v1/analytics/guids?gameModeId=2
+     * 1. Insert BP  gameMode : https://statsapi.mlb.com/api/v1/analytics/guids?gameModeId=0
+     * 2. Insert Warm Up gameMode: https://statsapi.mlb.com/api/v1/analytics/guids?gameModeId=1
+     * 3. Insert Live gameMode: https://statsapi.mlb.com/api/v1/analytics/guids?gameModeId=2
      *
      * @param timecode Use this parameter to return a snapshot of the data at the specified
      * time.
-     * 1. Insert timecode: http://statsapi.mlb.com/api/v1/analytics/guids?lastUpdatedTime=2018-10-25T09:58:06.007830Z
+     * 1. Insert timecode: https://statsapi.mlb.com/api/v1/analytics/guids?lastUpdatedTime=2018-10-25T09:58:06.007830Z
      *
      * @param limit Insert a limit to limit return {Limit 1000}.
-     * 1. Insert limit: http://statsapi.mlb.com/api/v1/analytics/guids?limit=10
+     * 1. Insert limit: https://statsapi.mlb.com/api/v1/analytics/guids?limit=10
      *
      * @param sortBy Sort return based on specific metric. Users can sort by 4 metrics:
-     * 1. lastUpdatedTime - http://statsapi.mlb.com/api/v1/analytics/guids?lastUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&sortBy=lastUpdatedTime
-     * 2. lastMetricsUpdatedTime - http://statsapi.mlb.com/api/v1/analytics/guids?lastMetricsUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&sortBy=lastMetricsUpdatedTime
-     * 3. lastPlayTime-http://statsapi.mlb.com/api/v1/analytics/guids?lastPlayTime=2018-02-02T16:06:51.704011Z&gameModeId=2&sortBy=lastPlayTime
-     * 4. lastVideoUpdatedTime  - http://statsapi.mlb.com/api/v1/analytics/guids?lastVideoUpdatedTime=2019-08-05T14:05:34.353000Z&sortBy=lastVideoUpdatedTime
+     * 1. lastUpdatedTime - https://statsapi.mlb.com/api/v1/analytics/guids?lastUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&sortBy=lastUpdatedTime
+     * 2. lastMetricsUpdatedTime - https://statsapi.mlb.com/api/v1/analytics/guids?lastMetricsUpdatedTime=2019-01-04T00:00:00.007380Z&gameModeId=2&sortBy=lastMetricsUpdatedTime
+     * 3. lastPlayTime-https://statsapi.mlb.com/api/v1/analytics/guids?lastPlayTime=2018-02-02T16:06:51.704011Z&gameModeId=2&sortBy=lastPlayTime
+     * 4. lastVideoUpdatedTime  - https://statsapi.mlb.com/api/v1/analytics/guids?lastVideoUpdatedTime=2019-08-05T14:05:34.353000Z&sortBy=lastVideoUpdatedTime
      *
      *
      * Each of the 4 metrics map to the following objects
@@ -466,21 +466,21 @@ export class GameService {
      * 4. lastVideoUpdatedTime ~ Timestamp of most recent update made to an individual play.
      *
      * @param offset Insert an offset to returns i+1 as the first record in the set of most recent games {Limit 1000} updated since a specific time, specific gameMode.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/guids?offset=10
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/guids?offset=10
      *
      * @param season Insert season to return all updated GUIDs for a given season.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/guids?season=2021
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/guids?season=2021
      *
      * @param sportId Insert sportId to return all updated GUIDs for a given sportId.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/guids?sportId=11
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/guids?sportId=11
      *
      * @param gameType Insert gameType to return all updated GUIDs for a given gameType.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/analytics/guids?gameType=D
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/analytics/guids?gameType=D
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute
      *
-     * Example: http://statsapi.mlb.com/api/v1/analytics/guids?fields=games,gamePk,metricsUpdatedAt
+     * Example: https://statsapi.mlb.com/api/v1/analytics/guids?fields=games,gamePk,metricsUpdatedAt
      *
      * @returns PlayByPlayRestObject OK
      * @throws ApiError
@@ -538,7 +538,7 @@ export class GameService {
      *
      * **Call with all parameters**
      *
-     * http://statsapi.mlb.com/api/v1/game/566685/guids?lastUpdatedTime=2019-05-13T14:15:14.005620Z&gameModeId=2&isPitch=true&isHit=true&isPickoff=false&hydrate=analytics(result,hit,pitch,metrics,video,metaData)
+     * https://statsapi.mlb.com/api/v1/game/566685/guids?lastUpdatedTime=2019-05-13T14:15:14.005620Z&gameModeId=2&isPitch=true&isHit=true&isPickoff=false&hydrate=analytics(result,hit,pitch,metrics,video,metaData)
      *
      * @param gamePk Insert gamePk to return GUIDS for a specific game.
      * 1. Insert gamePk: https://statsapi.mlb.com/api/v1/game/566685/guids?
@@ -556,7 +556,7 @@ export class GameService {
      *
      * @param lastUpdatedTime Use this parameter to return a snapshot of the data at the specified time it was updated.
      *
-     * 1. Insert timecode: http://statsapi.mlb.com/api/v1/game/566685/guids?lastUpdatedTime=2019-05-13T14:15:14.005620Z&gameModeId=2&hydrate=analytics(video)
+     * 1. Insert timecode: https://statsapi.mlb.com/api/v1/game/566685/guids?lastUpdatedTime=2019-05-13T14:15:14.005620Z&gameModeId=2&hydrate=analytics(video)
      *
      * @param lastMetricsUpdatedTime Use this parameter to return a snapshot of metrics data at the specified time it was updated.
      *
@@ -1064,26 +1064,26 @@ export class GameService {
      * the same request.  <br/> 6) If data is returned, get a new timeStamp
      * from the response, and use that for the next call as startTimecode.
      * <br></br>
-     * **Required Parameters:** all parameters are required to run this call. If incorrectly called the call will default to http://statsapi.mlb.com/api/v1/game/531304/feed/color
+     * **Required Parameters:** all parameters are required to run this call. If incorrectly called the call will default to https://statsapi.mlb.com/api/v1/game/531304/feed/color
      * <br></br>
      *
      * ---
      * **Example of call with required parameters:**
      *
-     * http://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180822_163853&endTimecode=20180822_163938
+     * https://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180822_163853&endTimecode=20180822_163938
      *
      * @param gamePk Insert gamePk
-     * 1. Insert gamePk: http://statsapi.mlb.com/api/v1/game/531321/feed/color/diffPatch
+     * 1. Insert gamePk: https://statsapi.mlb.com/api/v1/game/531321/feed/color/diffPatch
      *
      * @param startTimecode Insert startTimecode. Format:
      * MMDDYYYY_HHMMSS
      *
-     * 1. Insert starTimecode: http://statsapi.mlb.com/api/v1/game/531321/feed/color/diffPatch?startTimecode=20180823_162652
+     * 1. Insert starTimecode: https://statsapi.mlb.com/api/v1/game/531321/feed/color/diffPatch?startTimecode=20180823_162652
      *
      * @param endTimecode Insert endTimecode to complete this call.
      * Format: MMDDYYYY_HHMMSS
      *
-     * 1. Insert endTimecode: http://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_170716&endTimecode=20180823_171303
+     * 1. Insert endTimecode: https://statsapi.mlb.com/api/v1.1/game/531321/feed/live/diffPatch?startTimecode=20180823_170716&endTimecode=20180823_171303
      *
      * @returns ResponseEntity OK
      * @throws ApiError

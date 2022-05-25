@@ -22,16 +22,16 @@ export class SportsService {
      *
      * @param activeStatus Insert activeStatus to populate teams based on active/inactive
      * status for a given season.
-     * 1. http://statsapi.mlb.com/api/v1/sports?sportId=1&activeStatus=Y
-     * 2. http://statsapi.mlb.com/api/v1/sports?sportId=1&activeStatus=N
-     * 3. http://statsapi.mlb.com/api/v1/sports?sportId=1&activeStatus=B
+     * 1. https://statsapi.mlb.com/api/v1/sports?sportId=1&activeStatus=Y
+     * 2. https://statsapi.mlb.com/api/v1/sports?sportId=1&activeStatus=N
+     * 3. https://statsapi.mlb.com/api/v1/sports?sportId=1&activeStatus=B
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param sportId Insert a sportId to return a directory of sport(s).
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/sports?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute
@@ -82,15 +82,15 @@ export class SportsService {
      * @param sportId Insert a sportId to return a directory of sport(s).
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/sports/1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param activeStatus Insert activeStatus to populate teams based on active/inactive
      * status for a given season.
-     * 1. http://statsapi.mlb.com/api/v1/sports/1?&activeStatus=Y
-     * 2. http://statsapi.mlb.com/api/v1/sports/1?&activeStatus=N
-     * 3. http://statsapi.mlb.com/api/v1/sports/1?&activeStatus=B
+     * 1. https://statsapi.mlb.com/api/v1/sports/1?&activeStatus=Y
+     * 2. https://statsapi.mlb.com/api/v1/sports/1?&activeStatus=N
+     * 3. https://statsapi.mlb.com/api/v1/sports/1?&activeStatus=B
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute
@@ -136,7 +136,7 @@ export class SportsService {
      *
      * **Example of call with required parameters**
      *
-     * http://statsapi.mlb.com/api/v1/sports/1/players?season=2018
+     * https://statsapi.mlb.com/api/v1/sports/1/players?season=2018
      *
      *
      * ---
@@ -146,9 +146,9 @@ export class SportsService {
      * https://statsapi.mlb.com/api/v1/sports/1/players?season=2017&gameType=W
      *
      * @param sportId Insert a sportId to return player information  for a particular sport.
-     * 1. Insert sportId: http://statsapi.mlb.com/api/v1/sports/1/players
+     * 1. Insert sportId: https://statsapi.mlb.com/api/v1/sports/1/players
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param season Insert year to return player information  for a particular season.
      * 1. Insert year: https://statsapi.mlb.com/api/v1/sports/1/players?season=2017

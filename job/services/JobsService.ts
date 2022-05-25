@@ -21,30 +21,30 @@ export class JobsService {
      * ---
      * **Example of call with required parameters**
      *
-     * http://statsapi.mlb.com/api/v1/jobs?jobType=UMPR
+     * https://statsapi.mlb.com/api/v1/jobs?jobType=UMPR
      *
      * **Example of call with all parameters**
      *
-     * http://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&sportId=1
+     * https://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&sportId=1
      *
      * @param jobType Insert jobType to return information for a given jobType.
-     * 1. One jobType: http://statsapi.mlb.com/api/v1/jobs?jobType=UMPR
+     * 1. One jobType: https://statsapi.mlb.com/api/v1/jobs?jobType=UMPR
      *
      * For a list of all jobTypes: https://statsapi.mlb.com/api/v1/jobTypes
      *
      * @param sportId Insert sportId to return information for a given jobType in a specific sport.
-     * 1. One sportId: hhttp://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&sportId=1
+     * 1. One sportId: hhttps://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&sportId=1
      *
-     * For a list of all sportIds: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportIds: https://statsapi.mlb.com/api/v1/sports
      *
      * @param date Insert date to return information for jobs on a particular date. Format:
      * MM/DD/YYYY
-     * 1. Insert date: http://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&date=09/10/2011
+     * 1. Insert date: https://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&date=09/10/2011
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute
      *
-     * Example: http://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&sportId=1&fields=roster,person,fullName
+     * Example: https://statsapi.mlb.com/api/v1/jobs?jobType=UMPR&sportId=1&fields=roster,person,fullName
      *
      * @returns any OK
      * @throws ApiError
@@ -91,7 +91,7 @@ export class JobsService {
      * @param sportId Insert sportId to return information for umpires in a specific sport.
      * 1. One sportId: https://statsapi.mlb.com/api/v1/jobs/umpires?sportId=1
      *
-     * For a list of all sportIds: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportIds: https://statsapi.mlb.com/api/v1/sports
      *
      * @param date Insert date to return information for umpires on a particular date. Format:
      * MM/DD/YYYY
@@ -172,7 +172,7 @@ export class JobsService {
      * @param sportId Insert sportId to return information for datacasters in a specific sport.
      * 1. One sportId: https://statsapi.mlb.com/api/v1/jobs/datacasters?sportId=1
      *
-     * For a list of all sportIds: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportIds: https://statsapi.mlb.com/api/v1/sports
      *
      * @param date Insert date to return information for datacasters on a particular date. Format:
      * MM/DD/YYYY
@@ -253,7 +253,7 @@ export class JobsService {
      * @param sportId Insert sportId to return information for officialScorers in a specific sport.
      * 1. One sportId: https://statsapi.mlb.com/api/v1/jobs/officialScorers?sportId=1
      *
-     * For a list of all sportIds: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportIds: https://statsapi.mlb.com/api/v1/sports
      *
      * @param date Insert date to return information for officialScorers on a particular date. Format:
      * MM/DD/YYYY

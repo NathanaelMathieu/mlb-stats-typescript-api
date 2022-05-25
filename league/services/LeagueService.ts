@@ -32,7 +32,7 @@ export class LeagueService {
      * @param sportId Insert sportId to return league information and season date information for a specific sport.
      * 1. One sportId: https://statsapi.mlb.com/api/v1/league?sportId=1
      *
-     * For a list of all sportIds: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportIds: https://statsapi.mlb.com/api/v1/sports
      *
      * @param leagueIds Insert leagueId(s) to return league information for a specific league. Format '103,104'
      * 1. One leagueId: https://statsapi.mlb.com/api/v1/league?leagueIds=103

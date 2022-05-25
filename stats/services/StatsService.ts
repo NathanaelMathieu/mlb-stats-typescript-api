@@ -39,31 +39,31 @@ export class StatsService {
      * 1. hitData: launchSpeed,launchAngle,etc
      * 2. pitchData:  startSpeed, strikeZoneTop, strikeZoneBottom, etc
      *
-     * 1. One Hydration: http://statsapi.mlb.com/api/v1/people/518516/stats?stats=playLog&group=hitting&season=2018&hydrate=hitData
-     * 2. Multiple Hydration: http://statsapi.mlb.com/api/v1/people/518516/stats?stats=playLog&group=hitting&season=2018&hydrate=hitData,pitchData
+     * 1. One Hydration: https://statsapi.mlb.com/api/v1/people/518516/stats?stats=playLog&group=hitting&season=2018&hydrate=hitData
+     * 2. Multiple Hydration: https://statsapi.mlb.com/api/v1/people/518516/stats?stats=playLog&group=hitting&season=2018&hydrate=hitData,pitchData
      *
      * - Notes for populating different stat outputs for all players in both MLB & MiLB. The API defaults to a limit of 1000 returns in each call. The total for the entire return will appear via the "totalSplits" object. Use a large limit to match the totalSplits number or offset and limit to navigate through all of the data. Either workflow is efficient.
      *
-     * 1. MLB Season Stats: http://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&order=asc&playerPool=all&limit=5000
-     * 2. MiLB Season Stats: http://statsapi.mlb.com/api/v1/stats?stats=season&sportId=12&season=2018&group=hitting&order=asc&playerPool=alloffset=100&limit=1000
+     * 1. MLB Season Stats: https://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&order=asc&playerPool=all&limit=5000
+     * 2. MiLB Season Stats: https://statsapi.mlb.com/api/v1/stats?stats=season&sportId=12&season=2018&group=hitting&order=asc&playerPool=alloffset=100&limit=1000
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
-     * 3. One Stat Split: http://statsapi.mlb.com/api/v1/stats?stats=statSplits&sportId=1&season=2018&group=hitting&order=asc&playerPool=all&sitCodes=h&limit=5000
-     * 4. Multiple Stat Splits: http://statsapi.mlb.com/api/v1/stats?stats=statSplits&sportId=1&season=2018&group=hitting&order=asc&playerPool=all&sitCodes=a,h&offset=1000&limit=1000
+     * 3. One Stat Split: https://statsapi.mlb.com/api/v1/stats?stats=statSplits&sportId=1&season=2018&group=hitting&order=asc&playerPool=all&sitCodes=h&limit=5000
+     * 4. Multiple Stat Splits: https://statsapi.mlb.com/api/v1/stats?stats=statSplits&sportId=1&season=2018&group=hitting&order=asc&playerPool=all&sitCodes=a,h&offset=1000&limit=1000
      *
      * **List of sitCodes can be found at https://statsapi.mlb.com/api/v1/situationCodes**
      *
-     * 5. MLB stats by Date Range: http://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&type=byDateRange&order=asc&playerPool=all&offset=100&limit=1000&startDate=05/17/2018&endDate=05/21/2018
-     * 6. MiLB stats by Date Range: http://statsapi.mlb.com/api/v1/stats?stats=season&sportId=12&season=2018&group=hitting&type=byDateRange&order=asc&playerPool=all&offset=100&limit=1000&startDate=05/17/2018&endDate=05/21/2018
+     * 5. MLB stats by Date Range: https://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&type=byDateRange&order=asc&playerPool=all&offset=100&limit=1000&startDate=05/17/2018&endDate=05/21/2018
+     * 6. MiLB stats by Date Range: https://statsapi.mlb.com/api/v1/stats?stats=season&sportId=12&season=2018&group=hitting&type=byDateRange&order=asc&playerPool=all&offset=100&limit=1000&startDate=05/17/2018&endDate=05/21/2018
      *
      *
      * - Notes for individual events for playLog, playlog can be filtered by individual events
      *
-     * 1. One event for a given player: http://statsapi.mlb.com/api/v1/people/514888/stats?stats=playLog&group=hitting&season=2018&eventType=single
-     * 2. Multiple events for a given player: http://statsapi.mlb.com/api/v1/people/514888/stats?stats=playLog&group=hitting&season=2018&eventType=single,double
+     * 1. One event for a given player: https://statsapi.mlb.com/api/v1/people/514888/stats?stats=playLog&group=hitting&season=2018&eventType=single
+     * 2. Multiple events for a given player: https://statsapi.mlb.com/api/v1/people/514888/stats?stats=playLog&group=hitting&season=2018&eventType=single,double
      *
      * **List of eventTypes can be found at https://statsapi.mlb.com/api/v1/eventTypes**
      *
@@ -78,11 +78,11 @@ export class StatsService {
      * There are 4 different types of playerPools to return statistics for a particular playerPool across a sport.
      *
      * Use "ALL" for the APIequivalent of lookup cur_hitting/cur_pitching/cur_fielding
-     * 1. Insert All:  http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=All
-     * 2. Insert Qualified: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=Qualified
-     * 3. Insert Rookies: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=Rookies
-     * 4. Insert Qualified Rookies: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=Qualified_rookies
-     * 5. Insert Multiple sportIds and groups: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1,11,12,13,14,15,16&season=2018&group=hitting,pitching&playerPool=All
+     * 1. Insert All:  https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=All
+     * 2. Insert Qualified: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=Qualified
+     * 3. Insert Rookies: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=Rookies
+     * 4. Insert Qualified Rookies: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&playerPool=Qualified_rookies
+     * 5. Insert Multiple sportIds and groups: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1,11,12,13,14,15,16&season=2018&group=hitting,pitching&playerPool=All
      *
      * @param position
      * Insert position to return statistics for a given position. Default to "Qualified" playerPool
@@ -92,10 +92,10 @@ export class StatsService {
      * **Find available positions at https://statsapi.mlb.com/api/v1/positions**
      *
      * @param teamId Insert teamId to return statistics for a given team. Default to "Qualified" playerPool
-     * 1. Insert teamId: http://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&teamId=140
+     * 1. Insert teamId: https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&teamId=140
      *
      * @param leagueId Insert leagueId to return statistics for a given team. Default to "Qualified" playerPool
-     * 1. Insert leagueId: http://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&leagueId=104
+     * 1. Insert leagueId: https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&leagueId=104
      *
      * @param limit Insert a limit to limit return.
      * 1. Insert limit:  https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&position=3B&playerPool=Qualified&limit=2
@@ -104,26 +104,26 @@ export class StatsService {
      * 1. Insert offset: https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&position=3B&playerPool=Qualified&limit=2&offset=1&sortStat=battingAverage
      *
      * @param gameType Insert gameType to return statistics for a given sport or league based on gameType. Default to "Qualified" playerPool
-     * 1. Insert gameType:  http://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018
+     * 1. Insert gameType:  https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018
      *
      * Find available gameType at https://statsapi.mlb.com/api/v1/gameTypes
      *
      * @param season
      * Insert year to return statistics for a particular season. Default to "Qualified" playerPool
-     * 1. Insert year:  http://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018
+     * 1. Insert year:  https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018
      *
      * @param sportIds
      * Insert sportId to return statistics for a given sport.
-     * 1. Insert sportId: http://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&sportIds=11
-     * 2. Insert multiple sportIds: http://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&sportIds=1,11
+     * 1. Insert sportId: https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&sportIds=11
+     * 2. Insert multiple sportIds: https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&sportIds=1,11
      *
-     * For a list of all sportIds: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportIds: https://statsapi.mlb.com/api/v1/sports
      *
      * @param sortStat
      * Sort return based on stat.
      *
      * Default to "Qualified" playerPool
-     * 1. Insert stat:  http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&playerPool=Qualified&hydrate=person
+     * 1. Insert stat:  https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&playerPool=Qualified&hydrate=person
      *
      * For a list of all available stats: https://statsapi.mlb.com/api/v1/baseballStats
      *
@@ -131,14 +131,14 @@ export class StatsService {
      * order return based on either desc or asc.
      *
      * Default to "Qualified" playerPool
-     * 1. Insert stat:  http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person
+     * 1. Insert stat:  https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person
      *
      * For a list of all available stats: https://statsapi.mlb.com/api/v1/baseballStats
      *
      * @param hydrate Insert Hydration(s) to return data for any available stats hydration. The hydrations for Stats contain "person" and "team" which have subhydrations Format "team(subHydration1, subHydrations2)" "
-     * 1. One Hydration Using Team Sub Hydration: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league)
-     * 2. Multiple Hydrations Using Team Sub Hydration: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league,social)
-     * 3. Multiple Hydrations Using Team & Stat Sub Hydrations: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(transactions),team(league)
+     * 1. One Hydration Using Team Sub Hydration: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league)
+     * 2. Multiple Hydrations Using Team Sub Hydration: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league,social)
+     * 3. Multiple Hydrations Using Team & Stat Sub Hydrations: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(transactions),team(league)
      *
      * - Available Hydrations:
      *
@@ -187,8 +187,8 @@ export class StatsService {
      * - Notes on "currentTeam" hydration
      *
      * When hydrating for "currentTeam" users can use the 'appContext' parameter to specify most recent team by league
-     * 1. Most Recent Major League Team: http://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(appContext=majorLeague,currentTeam)%3A%29
-     * 2. Most Recent Minor League Team: http://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(appContext=minorLeague,currentTeam)%3A%29
+     * 1. Most Recent Major League Team: https://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(appContext=majorLeague,currentTeam)%3A%29
+     * 2. Most Recent Minor League Team: https://statsapi.mlb.com/api/v1/stats?stats=season&sportId=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(appContext=minorLeague,currentTeam)%3A%29
      *
      *
      *
@@ -197,7 +197,7 @@ export class StatsService {
      *
      * @param fields Comma delimited list of specific fields to be returned. Format: topLevelNode, childNode, attribute
      *
-     * Example: http://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&fields=stats,type,splits,season,stat,homeruns,player,fullName
+     * Example: https://statsapi.mlb.com/api/v1/stats?stats=season&group=hitting&gameType=R&season=2018&fields=stats,type,splits,season,stat,homeruns,player,fullName
      *
      * @returns any OK
      * @throws ApiError
@@ -263,26 +263,26 @@ export class StatsService {
      *
      * **Example of call with required parameters**
      *
-     * http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
+     * https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
      *
      *
      * @param stats There are two statTypes for metrics: metricAverages (average of event level return for Statcast metrics) & metricLog (play by play return of all Statcast metric values).
-     * 1. metricAverages:  http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
-     * 2. metricLog: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=launchSpeed&group=hitting&season=2019
+     * 1. metricAverages:  https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
+     * 2. metricLog: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=launchSpeed&group=hitting&season=2019
      *
      * **Find available metrics at https://statsapi.mlb.com/api/v1/metrics**
      *
      * @param group Insert statGroup with the group parameter to return statistics for a given sport or league based on group.
-     * 1. Insert statGroup:  http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
+     * 1. Insert statGroup:  https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
      *
      * **Find available statGroups at https://statsapi.mlb.com/api/v1/statGroups**
      *
      * @param season
      * Insert year to return statistics for a particular season.
-     * 1. Insert year:  http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
+     * 1. Insert year:  https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019
      *
      * @param gameType Insert gameType to return statistics for a given sport or league based on gameType.
-     * 1. Insert gameType:  http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2018&gameType=W
+     * 1. Insert gameType:  https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2018&gameType=W
      *
      * Find available gameType at https://statsapi.mlb.com/api/v1/gameTypes
      *
@@ -291,19 +291,19 @@ export class StatsService {
      *
      * **startDate must be coupled with endDate**
      *
-     * 1. Insert startDate:  http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&startDate=04/17/2019&endDate=05/21/2019
+     * 1. Insert startDate:  https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&startDate=04/17/2019&endDate=05/21/2019
      *
      * @param endDate
      * Insert date to return a directory of attendance metrics for a particular date range. Format: MM/DD/YYYY
      *
      * **endDate must be coupled with startDate**
      *
-     * 1. Insert endDate:  http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&startDate=04/17/2019&endDate=05/21/2019
+     * 1. Insert endDate:  https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&startDate=04/17/2019&endDate=05/21/2019
      *
      * @param venueId
      * Insert venueId to return statistics for a given venue.
-     * 1. One Metric: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=distance&group=hitting&season=2019&venueId=3313
-     * 2. Multiple Metrics: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=distance,barreledBall&group=hitting&season=2019&venueId=3313
+     * 1. One Metric: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=distance&group=hitting&season=2019&venueId=3313
+     * 2. Multiple Metrics: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=distance,barreledBall&group=hitting&season=2019&venueId=3313
      *
      * **List of all MLB venue: https://statsapi.mlb.com/api/v1/teams?sportId=1**
      *
@@ -313,7 +313,7 @@ export class StatsService {
      *
      * @param minOccurrences
      * Insert minOccurrences for a required minimum of occurrences for a given metric
-     * 1. minOccurrences for barrels: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=barreledBall&group=hitting&season=2019&minOccurrences=26
+     * 1. minOccurrences for barrels: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricLog&metrics=barreledBall&group=hitting&season=2019&minOccurrences=26
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
@@ -321,7 +321,7 @@ export class StatsService {
      *
      * @param percentile
      * Insert percentile for a specific percentile return for a given metric
-     * 1. percentile for sprintSpeed: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=sprintSpeed&group=running&season=2019&percentile=70
+     * 1. percentile for sprintSpeed: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=sprintSpeed&group=running&season=2019&percentile=70
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
@@ -329,8 +329,8 @@ export class StatsService {
      *
      * @param personId
      * Insert personId to return metric values for a give player, this is the only statType that takes personId in the stats endpoint.
-     * 1. One Metric: http://statsapi.mlb.com/api/v1/stats?stats=metricAverages&personId=592450&group=hitting&gameType=R&season=2018&metrics=launchSpeed
-     * 2. Multiple Metrics: http://statsapi.mlb.com/api/v1/stats?stats=metricAverages&personId=592450&group=hitting&gameType=R&season=2018&metrics=launchSpeed,launchAngle
+     * 1. One Metric: https://statsapi.mlb.com/api/v1/stats?stats=metricAverages&personId=592450&group=hitting&gameType=R&season=2018&metrics=launchSpeed
+     * 2. Multiple Metrics: https://statsapi.mlb.com/api/v1/stats?stats=metricAverages&personId=592450&group=hitting&gameType=R&season=2018&metrics=launchSpeed,launchAngle
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
@@ -348,7 +348,7 @@ export class StatsService {
      * 7. Pitching with Event Type and Venue: https://statsapi.mlb.com/api/v1/stats/metrics?personIds=571945,592866&group=pitching&stats=metricLog&metrics=effectiveSpeed&season=2019&eventType=homeRun&pitchType=SL&venueId=31
      * 8. For League: https://statsapi.mlb.com/api/v1/stats/metrics?group=hitting&stats=metricAverages&metrics=launchSpeed&season=2019&eventType=homeRun&offset=100&limit=100
      *
-     * **List of statTypes can be found at http://statsapi.mlb.com/api/v1/pitchTypes**
+     * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/pitchTypes**
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
@@ -357,18 +357,18 @@ export class StatsService {
      * **List of eventTypes can be found at https://statsapi.mlb.com/api/v1/eventTypes**
      *
      * @param teamId Insert teamId to return statistics for a given team.
-     * 1. Insert teamId: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&teamId=140
+     * 1. Insert teamId: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&teamId=140
      *
      * @param limit Insert a limit to limit return.
-     * 1. Insert limit:  http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1
+     * 1. Insert limit:  https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1
      *
      * @param offset Insert an offset to returns i+1 as the first record in the set of players.
-     * 1. Insert offset: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&offset=1
+     * 1. Insert offset: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&offset=1
      *
      * @param hydrate Insert Hydration(s) to return data for any available stats hydration. The hydrations for Stats contain "person" and "team" which have subhydrations Format "team(subHydration1, subHydrations2)"
-     * 1. One Hydration Using Person Sub Hydration: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(team)
-     * 2. Multiple Hydrations Using Team Sub Hydration: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(team,rosterEntries)
-     * 3. Multiple Hydrations Using Team & Stat Sub Hydrations: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(team,rosterEntries,stats(type=season,season=2019))
+     * 1. One Hydration Using Person Sub Hydration: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(team)
+     * 2. Multiple Hydrations Using Team Sub Hydration: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(team,rosterEntries)
+     * 3. Multiple Hydrations Using Team & Stat Sub Hydrations: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(team,rosterEntries,stats(type=season,season=2019))
      *
      * - Available Hydrations:
      *
@@ -417,12 +417,12 @@ export class StatsService {
      * - Notes on "currentTeam" hydration
      *
      * When hydrating for "currentTeam" users can use the 'appContext' parameter to specify most recent team by league
-     * 1. Most Recent Major League Team: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(appContext=majorLeague,currentTeam)
-     * 2. Most Recent Minor League Team: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(appContext=minorLeague,currentTeam)
+     * 1. Most Recent Major League Team: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(appContext=majorLeague,currentTeam)
+     * 2. Most Recent Minor League Team: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&hydrate=person(appContext=minorLeague,currentTeam)
      *
      * @param fields Comma delimited list of specific fields to be returned. Format: topLevelNode, childNode, attribute
      *
-     * Example: http://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&fields=stats,type,splits,season,stat,homeruns,player,fullName
+     * Example: https://statsapi.mlb.com/api/v1/stats/metrics?stats=metricAverages&metrics=launchSpeed&group=hitting&season=2019&limit=1&fields=stats,type,splits,season,stat,homeruns,player,fullName
      *
      * @returns any OK
      * @throws ApiError
@@ -563,7 +563,7 @@ export class StatsService {
      * @param sportId Insert a sportId to return information  and ranking for a particular statistic in a given sport.
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&sportId=12&season=2018
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param hydrate Insert Hydration(s) to return data for any available stats hydration. The hydrations for Stats contain "person" and "team" which have subhydrations Format "team(subHydration1, subHydrations2)" "
      * 1. One Hydration Using Team Sub Hydration: https://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&leaderGameTypes=R&statGroups=hitting&season=2018&hydrate=team(league)
@@ -648,7 +648,7 @@ export class StatsService {
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
-     * **List of sportIds can be found at http://statsapi.mlb.com/api/v1/sports**
+     * **List of sportIds can be found at https://statsapi.mlb.com/api/v1/sports**
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
@@ -659,13 +659,13 @@ export class StatsService {
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
-     * **List of sportIds can be found at http://statsapi.mlb.com/api/v1/sports**
+     * **List of sportIds can be found at https://statsapi.mlb.com/api/v1/sports**
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
      * Best practice for season stats in date range, use person(stats(group=["statGroup1","statGroup2"],type=["byDateRange"]startDate="mm/dd/yyyy",endDate="mm/dd/yyyy",season="year")).
      *
-     * 1. Hydrating byDateRange stat: http://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&season=2018&hydrate=person(stats(group=[hitting,pitching],type=[byDateRange],startDate=05/17/2018,endDate=05/21/2018,season=2018)%3A%29
+     * 1. Hydrating byDateRange stat: https://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&season=2018&hydrate=person(stats(group=[hitting,pitching],type=[byDateRange],startDate=05/17/2018,endDate=05/21/2018,season=2018)%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
@@ -673,9 +673,9 @@ export class StatsService {
      *
      * Best practice for limiting playLog & pitchLog, use stats(group=["statGroup1","statGroup2"],type=["playLog"],limit=1,season="year").
      *
-     * 1. Limiting playLog: http://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&season=2018&hydrate=person(stats(group=[hitting,pitching],type=[playLog],limit=1,season=2017)%3A%29
+     * 1. Limiting playLog: https://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&season=2018&hydrate=person(stats(group=[hitting,pitching],type=[playLog],limit=1,season=2017)%3A%29
      *
-     * 2. Limiting pitchLog: http://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&season=2018&hydrate=person(stats(group=[hitting,pitching],type=[pitchLog],limit=1,season=2017)%3A%29
+     * 2. Limiting pitchLog: https://statsapi.mlb.com/api/v1/stats/leaders?leaderCategories=homeRuns&season=2018&hydrate=person(stats(group=[hitting,pitching],type=[pitchLog],limit=1,season=2017)%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
@@ -704,7 +704,7 @@ export class StatsService {
      *
      * **List of sitCodes can be found at https://statsapi.mlb.com/api/v1/situationCodes**
      *
-     * **List of sportIds can be found at http://statsapi.mlb.com/api/v1/sports**
+     * **List of sportIds can be found at https://statsapi.mlb.com/api/v1/sports**
      *
      *
      *
@@ -784,37 +784,37 @@ export class StatsService {
      * ---
      * **Example of call with hydration parameters**
      *
-     * http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=season&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(type=season,season=2018))
+     * https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=season&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(type=season,season=2018))
      *
      * @param streakType Insert streakType to return streak information for player in a particular season.
-     * 1. Insert streakType: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=season&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
+     * 1. Insert streakType: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=season&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
      *
      * @param streakSpan Insert streakSpan to return the span of streak for player in a particular season.
-     * 1. Insert streakSpan: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=season&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
+     * 1. Insert streakSpan: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=season&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
      *
      * @param season Insert year to return streak stats for a particular season.
-     * 1. Insert year: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
+     * 1. Insert year: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
      *
      * @param gameType Insert gameType to return streak stats for a particular gameType.
-     * 1. Insert gameType: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
+     * 1. Insert gameType: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
      *
      * For a list of all gameTypes: https://statsapi.mlb.com/api/v1/gameTypes
      *
      * @param startersOnly Insert startersOnly to return streak stats for a starting pitchers only.
-     * 1. Insert year: http://statsapi.mlb.com/api/v1/streaks?statGroup=pitching&gameType=R&streakStat=hits&sportId=1&season=2018&limit=5&streakOrg=player&streakSpan=season&streakLevel=game&inverse=true&startersOnly=true
+     * 1. Insert year: https://statsapi.mlb.com/api/v1/streaks?statGroup=pitching&gameType=R&streakStat=hits&sportId=1&season=2018&limit=5&streakOrg=player&streakSpan=season&streakLevel=game&inverse=true&startersOnly=true
      *
      * @param sportId Insert sportId to return streak stats for a particular sportId.
-     * 1. Insert sportId: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
+     * 1. Insert sportId: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
      *
-     * For a list of all sportId: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportId: https://statsapi.mlb.com/api/v1/sports
      *
      * @param limit Insert a limit to limit return.
-     * 1. Insert limit: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
+     * 1. Insert limit: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10
      *
      * @param hydrate Insert Hydration(s) to return data for any available stats hydration. The hydrations for Stats contain "person" and "team" which have subhydrations Format "team(subHydration1, subHydrations2)" "
-     * 1. One Hydration Using Team Sub Hydration: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league)
-     * 2. Multiple Hydrations Using Team Sub Hydration: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league,social)
-     * 3. Multiple Hydrations Using Team & Stat Sub Hydrations: http://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(transactions),team(league)
+     * 1. One Hydration Using Team Sub Hydration: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league)
+     * 2. Multiple Hydrations Using Team Sub Hydration: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=team(league,social)
+     * 3. Multiple Hydrations Using Team & Stat Sub Hydrations: https://statsapi.mlb.com/api/v1/stats?stats=season&sportIds=1&season=2018&group=hitting&sortStat=battingAverage&order=asc&playerPool=Qualified&hydrate=person(transactions),team(league)
      *
      * - Available Hydrations:
      *
@@ -863,16 +863,16 @@ export class StatsService {
      * - Notes on "currentTeam" hydration
      *
      * When hydrating for "currentTeam" users can use the 'appContext' parameter to specify most recent team by league
-     * 1. Most Recent Major League Team: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(appContext=majorLeague,currentTeam)%3A%29
-     * 2. Most Recent Minor League Team: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(appContext=minorLeague,currentTeam)%3A%29
+     * 1. Most Recent Major League Team: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(appContext=majorLeague,currentTeam)%3A%29
+     * 2. Most Recent Minor League Team: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(appContext=minorLeague,currentTeam)%3A%29
      *
      *
      * - Notes on Stat Hydrations
      *
      * Best practice for MLB stat hydrations, use person(stats(group=["statGroup1","statGroup2"],type=["statType1","statType2"]).
      *
-     * 1. Hydrating one statType/statGroup: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting],type=[career])%3A%29
-     * 2. Hydrating multiple statTypes/statGroups: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[career,yearByYear])%3A%29
+     * 1. Hydrating one statType/statGroup: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting],type=[career])%3A%29
+     * 2. Hydrating multiple statTypes/statGroups: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[career,yearByYear])%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
@@ -880,8 +880,8 @@ export class StatsService {
      *
      * Best practice for MLB individual stat hydrations, use person(stats(group=["statGroup1","statGroup2"],type=["statType1","statType2"],season="year").
      *
-     * 1. Hydrating one statType/statGroup: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting],type=[season],season=2018)%3A%29
-     * 2. Hydrating multiple statTypes/statGroups: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[season,seasonAdvanced],season=2018)%3A%29
+     * 1. Hydrating one statType/statGroup: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting],type=[season],season=2018)%3A%29
+     * 2. Hydrating multiple statTypes/statGroups: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[season,seasonAdvanced],season=2018)%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
@@ -889,29 +889,29 @@ export class StatsService {
      *
      * Best practice for MiLB stat hydrations, use person(stats(group=["statGroup1,statGroup2"],type=["statType1","statType2],sportId="MiLB Id")).
      *
-     * 1. Hydrating one statType/statGroup: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting],sportId=12,type=[career])%3A%29
-     * 2. Hydrating multiple statTypes/statGroups: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting,pitching],sportId=12,type=[career,yearByYear])%3A%29
+     * 1. Hydrating one statType/statGroup: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting],sportId=12,type=[career])%3A%29
+     * 2. Hydrating multiple statTypes/statGroups: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting,pitching],sportId=12,type=[career,yearByYear])%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
-     * **List of sportIds can be found at http://statsapi.mlb.com/api/v1/sports**
+     * **List of sportIds can be found at https://statsapi.mlb.com/api/v1/sports**
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
      * Best practice for MiLB individual stat hydrations, use person(stats(group=["statGroup1,statGroup2"],type=["statType1","statType2],sportId="MiLB Id",season=2018)).
      *
-     * 1. Hydrating one statType/statGroup: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting],type=[season],sportId=12,season=2018)%3A%29
-     * 2. Hydrating multiple statTypes/statGroups: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[season,seasonAdvanced],sportId=12,season=2018)%3A%29
+     * 1. Hydrating one statType/statGroup: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting],type=[season],sportId=12,season=2018)%3A%29
+     * 2. Hydrating multiple statTypes/statGroups: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[season,seasonAdvanced],sportId=12,season=2018)%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
-     * **List of sportIds can be found at http://statsapi.mlb.com/api/v1/sports**
+     * **List of sportIds can be found at https://statsapi.mlb.com/api/v1/sports**
      *
      * **List of statGroups can be found at https://statsapi.mlb.com/api/v1/statGroups**
      *
      * Best practice for season stats in date range, use person(stats(group=["statGroup1","statGroup2"],type=["byDateRange"]startDate="mm/dd/yyyy",endDate="mm/dd/yyyy",season="year")).
      *
-     * 1. Hydrating byDateRange stat: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[byDateRange],startDate=05/17/2018,endDate=05/21/2018,season=2018)%3A%29
+     * 1. Hydrating byDateRange stat: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[byDateRange],startDate=05/17/2018,endDate=05/21/2018,season=2018)%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
@@ -919,9 +919,9 @@ export class StatsService {
      *
      * Best practice for limiting playLog & pitchLog, use stats(group=["statGroup1","statGroup2"],type=["playLog"],limit=1,seaon="year").
      *
-     * 1. Limiting playLog: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[playLog],limit=1,season=2018)%3A%29
+     * 1. Limiting playLog: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[playLog],limit=1,season=2018)%3A%29
      *
-     * 2. Limiting pitchLog: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[pitchLog],limit=1,season=2018)%3A%29
+     * 2. Limiting pitchLog: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[pitchLog],limit=1,season=2018)%3A%29
      *
      * **List of statTypes can be found at https://statsapi.mlb.com/api/v1/statTypes**
      *
@@ -929,36 +929,36 @@ export class StatsService {
      *
      * Best practice for metrics in stat hydrations, use person(stats(type=[metricAverages],metrics=[launchSpeed],season=2018)) or person(stats(type=[metricLog],metrics=[launchSpeed],season=2018)).
      *
-     * 1. Hydrating one metric with metricAverages: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(type=[metricAverages],metrics=[launchSpinRate],season=2018)%3A%29
-     * 2. Hydrating one statType and multiple metrics with metricAverages: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(type=[byMonth,metricAverages],metrics=[launchSpeed,launchSpinRate],season=2018)%3A%29
+     * 1. Hydrating one metric with metricAverages: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(type=[metricAverages],metrics=[launchSpinRate],season=2018)%3A%29
+     * 2. Hydrating one statType and multiple metrics with metricAverages: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(type=[byMonth,metricAverages],metrics=[launchSpeed,launchSpinRate],season=2018)%3A%29
      *
-     * 3. Hydrating one metric with metricLog: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&teamId=147&hydrate=person(stats(type=[metricLog],metrics=[launchSpinRate],season=2018)%3A%29
-     * 4. Hydrating one statType and multiple metrics with metricLog: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&teamId=147&hydrate=person(stats(type=[byMonth,metricLog],metrics=[launchSpeed,launchSpinRate],season=2018)%3A%29
+     * 3. Hydrating one metric with metricLog: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&teamId=147&hydrate=person(stats(type=[metricLog],metrics=[launchSpinRate],season=2018)%3A%29
+     * 4. Hydrating one statType and multiple metrics with metricLog: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&teamId=147&hydrate=person(stats(type=[byMonth,metricLog],metrics=[launchSpeed,launchSpinRate],season=2018)%3A%29
      *
      * **List of metrics can be found at https://statsapi.mlb.com/api/v1/metrics**
      *
      * Best practice for MLB sitCodes in stat hydrations, use person(stats(type=[statSplits],sitCodes=[h,a],season="year")).
      *
-     * 1. Hydrating one sitCode: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting],type=[statSplits],sitCodes=a)%3A%29
-     * 2. Hydrating one statType and multiple sitCodes: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[career,statSplits],sitCodes=[a,h])%3A%29
+     * 1. Hydrating one sitCode: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting],type=[statSplits],sitCodes=a)%3A%29
+     * 2. Hydrating one statType and multiple sitCodes: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[career,statSplits],sitCodes=[a,h])%3A%29
      *
      * **List of sitCodes can be found at https://statsapi.mlb.com/api/v1/situationCodes**
      *
      * Best practice for MiLB sitCodes in stat hydrations, use person(stats(type=[statSplits],sitCodes=[h,a],season="year",sportId = "MiLB Id")).
      *
-     * 1. Hydrating one sitCode: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting],type=[statSplits],sportId=12,sitCodes=a,season=2018)%3A%29
-     * 2. Hydrating one statType and multiple sitCodes: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[career,statSplits],sportId=12,sitCodes=[a,h],season=2018)%3A%29
+     * 1. Hydrating one sitCode: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting],type=[statSplits],sportId=12,sitCodes=a,season=2018)%3A%29
+     * 2. Hydrating one statType and multiple sitCodes: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=12&limit=10&hydrate=person(stats(group=[hitting,pitching],type=[career,statSplits],sportId=12,sitCodes=[a,h],season=2018)%3A%29
      *
      * **List of sitCodes can be found at https://statsapi.mlb.com/api/v1/situationCodes**
      *
-     * **List of sportIds can be found at http://statsapi.mlb.com/api/v1/sports**
+     * **List of sportIds can be found at https://statsapi.mlb.com/api/v1/sports**
      *
      *
      *
      *
      * @param fields Comma delimited list of specific fields to be returned. Format: topLevelNode, childNode, attribute
      *
-     * Example: http://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&fields=streaks,person,fullName,stats,gamesPlayed,hits
+     * Example: https://statsapi.mlb.com/api/v1/stats/streaks?gameType=R&streakSpan=notableInSeason&streakType=hittingStreakOverall&season=2018&sportId=1&limit=10&fields=streaks,person,fullName,stats,gamesPlayed,hits
      *
      * @returns StatStreaksRestObject OK
      * @throws ApiError

@@ -37,7 +37,7 @@ export class ScheduleService {
      * 1. Insert sportId: https://statsapi.mlb.com/api/v1/schedule/?sportId=1
      * 2. Insert multiple sportIds: https://statsapi.mlb.com/api/v1/schedule/?sportId=1,11
      *
-     * For a list of all sportIds: http://statsapi.mlb.com/api/v1/sports
+     * For a list of all sportIds: https://statsapi.mlb.com/api/v1/sports
      *
      * @param gamePks
      * Insert gamePks to return all schedules based on a particular scheduleType for specific games.
@@ -58,7 +58,7 @@ export class ScheduleService {
      * **Return timecodes from timecodes endpoint https://statsapi.mlb.com/api/v1.1/game/534196/feed/live/timestamps.**
      *
      *
-     * 1. Insert timecode: http://statsapi.mlb.com/api/v1/schedule?sportId=1&timecode=20190707_180000&date=07/07/2019
+     * 1. Insert timecode: https://statsapi.mlb.com/api/v1/schedule?sportId=1&timecode=20190707_180000&date=07/07/2019
      *
      * @param eventTypes There are two different schedule eventTypes:
      * 1. primary- returns calendar/schedule pages.
@@ -347,7 +347,7 @@ export class ScheduleService {
      * 1. One sportId:  https://statsapi.mlb.com/api/v1/schedule/trackingEvents?date=2/25/2021&sportId=586
      * 2. Multiple sportIds: https://statsapi.mlb.com/api/v1/schedule/trackingEvents?date=2/25/2021&sportId=586,1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param hydrate Insert event(status) to the hydrate parameter to return the status for each event.
      * 1. event(status): https://statsapi.mlb.com/api/v1/schedule/trackingEvents?date=08/13/2021&sportId=22&hydrate=event(status)
@@ -596,7 +596,7 @@ export class ScheduleService {
      * @param sportId Insert a sportId to return schedule information for all postseason games for a particular sport.
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param season Insert year to return schedule information for postseason games for a given year.
      * 1. Insert year: https://statsapi.mlb.com/api/v1/schedule/postseason?season=2017
@@ -773,7 +773,7 @@ export class ScheduleService {
      * @param sportId Insert a sportId to return schedule information for all postseason games for a particular sport.
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/schedule/postseason/series?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param season Insert year to return schedule information for postseason games for a given year broken down by series.
      * 1. Insert year: https://statsapi.mlb.com/api/v1/schedule/postseason/series?season=2017
@@ -840,7 +840,7 @@ export class ScheduleService {
      * @param sportId Insert a sportId to return schedule information for all postseason games for a particular sport.
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/schedule/postseason/tuneIn?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param season Insert year to return schedule information for postseason games for a given year broken down by series.
      * 1. Insert year: https://statsapi.mlb.com/api/v1/schedule/postseason/tuneIn?season=2017

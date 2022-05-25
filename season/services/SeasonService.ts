@@ -24,10 +24,10 @@ export class SeasonService {
      * @param sportId Insert a sportId to return season information  for the current year for a particular sport.
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/seasons?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param withGameTypeDates Insert a withGameTypeDates to return season information for all gameTypes.
-     * 1. Insert withGameTypeDates:  http://statsapi.mlb.com/api/v1/seasons?season=2019&sportId=1&withGameTypeDates=true
+     * 1. Insert withGameTypeDates:  https://statsapi.mlb.com/api/v1/seasons?season=2019&sportId=1&withGameTypeDates=true
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute
@@ -82,12 +82,12 @@ export class SeasonService {
      * @param leagueId Insert leagueId to return a directory of seasons in a specific league.
      * 1. One leagueId:  https://statsapi.mlb.com/api/v1/seasons/all?leagueId=103
      *
-     * For  a list of all leagueIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all leagueIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param sportId Insert a sportId to return a directory of seasons for a specific sport.
      * 1. One sportId:  https://statsapi.mlb.com/api/v1/seasons/all?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param fields Comma delimited list of specific fields to be returned. Format:
      * topLevelNode, childNode, attribute
@@ -142,7 +142,7 @@ export class SeasonService {
      * @param sportId Insert a sportId to return season information  for the current year for a particular sport.
      * 1. Insert sportId:  https://statsapi.mlb.com/api/v1/seasons/2017?sportId=1
      *
-     * For  a list of all sportIds:  http://statsapi.mlb.com/api/v1/sports
+     * For  a list of all sportIds:  https://statsapi.mlb.com/api/v1/sports
      *
      * @param withGameTypeDates Insert a withGameTypeDates to return season information for all gameTypes.
      * 1. Insert withGameTypeDates:  https://statsapi.mlb.com/api/v1/seasons/2017?sportId=1&withGameTypeDates=true
