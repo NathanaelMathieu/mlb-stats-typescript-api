@@ -1,3 +1,4 @@
+/* eslint-disable */
 import type { ApiResult } from "./ApiResult";
 
 export class ApiError extends Error {
