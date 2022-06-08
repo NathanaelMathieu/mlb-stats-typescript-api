@@ -85,6 +85,7 @@ export type { Team } from "./Team";
 export type { TeamContentCms } from "./TeamContentCms";
 export type { TeamPlayoffs } from "./TeamPlayoffs";
 export type { TeamRestObject } from "./TeamRestObject";
+export type { TeamsRestObject } from "./TeamsRestObject";
 export type { TeamStandingsRecordRestObject } from "./TeamStandingsRecordRestObject";
 export type { TicketRestObject } from "./TicketRestObject";
 export type { TimeZoneRestObject } from "./TimeZoneRestObject";
