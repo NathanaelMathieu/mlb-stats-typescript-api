@@ -1,12 +1,1 @@
 export * as MLBStatsAPI from './src/';
-export * as DraftAPI from './src/draft';
-export * as GameAPI from './src/game';
-export * as JobAPI from './src/job';
-export * as LeagueAPI from './src/league';
-export * as ScheduleAPI from './src/schedule';
-export * as SeasonAPI from './src/season';
-export * as SportsAPI from './src/sports';
-export * as StandingsAPI from './src/standings';
-export * as StatsAPI from './src/stats';
-export * as TeamAPI from './src/team';
-export * as VenueAPI from './src/venue';
