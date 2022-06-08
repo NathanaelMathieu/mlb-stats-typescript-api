@@ -35,5 +35,11 @@ export type TeamRestObject = {
   parentOrgId?: number;
   franchiseName?: string;
   clubName?: string;
-  active?: true;
+  active?: boolean;
+  springLeague?: {
+    id?: number;
+    name?: string;
+    link?: string;
+    abbreviation?: string;
+  }
 };
