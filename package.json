@@ -7,10 +7,8 @@
   "files": [
     "output"
   ],
-  "dependencies": {
-    "typescript": "^4.6.4"
-  },
   "scripts": {
+    "lint": "eslint .",
     "build": "tsc",
     "prepare": "npm version patch && npm run build"
   },
@@ -20,5 +18,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/NathanaelMathieu/mlb-stats-typescript-api.git"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.6.2",
+    "prettier-eslint": "^15.0.1",
+    "typescript": "^4.7.3"
   }
 }

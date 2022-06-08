@@ -1,6 +1,1 @@
-/* istanbul ignore file */
-/* tslint:disable */
-/* eslint-disable */
-
-export type SeriesStatusRestObject = {
-};
+export type SeriesStatusRestObject = {};

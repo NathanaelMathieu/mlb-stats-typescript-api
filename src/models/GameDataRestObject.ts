@@ -1,6 +1,1 @@
-/* istanbul ignore file */
-/* tslint:disable */
-/* eslint-disable */
-
-export type GameDataRestObject = {
-};
+export type GameDataRestObject = {};

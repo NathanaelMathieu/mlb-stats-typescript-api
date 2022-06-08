@@ -1,6 +1,1 @@
-/* istanbul ignore file */
-/* tslint:disable */
-/* eslint-disable */
-
-export type DynamicEnumRestObject = {
-};
+export type DynamicEnumRestObject = {};

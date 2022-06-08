@@ -1,2 +1,2 @@
-import * as MLBStatsAPI from './src';
+import * as MLBStatsAPI from "./src";
 export default MLBStatsAPI;
