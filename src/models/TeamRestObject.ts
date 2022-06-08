@@ -41,5 +41,9 @@ export type TeamRestObject = {
     name?: string;
     link?: string;
     abbreviation?: string;
-  }
+  };
+  springVenue?: {
+    id?: number;
+    link?: string;
+  };
 };
