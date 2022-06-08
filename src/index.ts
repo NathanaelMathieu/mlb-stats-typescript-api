@@ -1,3 +1,5 @@
+export * from "./models";
+
 export { AwardsService } from "./services/AwardsService";
 export { DraftService } from "./services/DraftService";
 export { GameService } from "./services/GameService";
