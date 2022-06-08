@@ -5,6 +5,7 @@ export { DraftService } from "./services/DraftService";
 export { GameService } from "./services/GameService";
 export { JobsService } from "./services/JobsService";
 export { LeagueService } from "./services/LeagueService";
+export { PeopleService } from "./services/PeopleService";
 export { ScheduleService } from "./services/ScheduleService";
 export { SeasonService } from "./services/SeasonService";
 export { SportsService } from "./services/SportsService";
