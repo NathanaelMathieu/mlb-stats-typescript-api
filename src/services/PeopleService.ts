@@ -4,13 +4,19 @@ import { request as __request } from "../core/request";
 
 export class PeopleService {
 	public static GetPeople(
-		id?: number
+		id?: number,
+		options?: {			
+		fields?: Array<string>;
+		}
 	): CancelablePromise<any> {
 		return __request(OpenAPI, {
 			method: "GET",
 			url: "/api/v1/people/{id}",
 			path: {
 				id: id,
+			},
+			query: {
+				fields: options?.fields,
 			},
 			errors: {
 				401: `Unauthorized`,
