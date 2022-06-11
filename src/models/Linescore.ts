@@ -4,7 +4,7 @@ export type Linescore = {
   currentInningOrdinal?: string;
   inningState?: string;
   inningHalf?: string;
-  isTopInning?: false;
+  isTopInning?: boolean;
   scheduledInnings?: number;
   innings?: Array<LinescoreInning>;
   teams?: {

@@ -18,12 +18,12 @@ export type ScheduleRestObject = {
       gameDate?: string;
       officialDate?: string;
       status?: {
-        abstractGameState?: string;
-        codedGameState?: string;
-        detailedState?: string;
-        statusCode?: string;
-        startTimeTBD?: false;
-        abstractGameCode?: string;
+        abstractGameState?: "Preview" | "Live" | "Final";
+        codedGameState?: "S" | "P" | "I" | "F";
+        detailedState?: "Scheduled" | "Pre-Game" | "In Progress" | "Finished";
+        statusCode?: "S" | "P" | "I" | "F";
+        startTimeTBD?: boolean;
+        abstractGameCode?: "P" | "L" | "F";
       };
       teams?: {
         away?: ScheduleRestTeamObject;
@@ -38,7 +38,7 @@ export type ScheduleRestObject = {
         link?: string;
       };
       gameNumber?: number;
-      publicFacing?: true;
+      publicFacing?: boolean;
       doubleHeader?: string;
       gamedayType?: string;
       tiebreaker?: string;
@@ -46,7 +46,7 @@ export type ScheduleRestObject = {
       seasonDisplay?: string;
       dayNight?: string;
       scheduledInnings?: number;
-      reverseHomeAwayStatus?: false;
+      reverseHomeAwayStatus?: boolean;
       inningBreakLength?: number;
       gamesInSeries?: number;
       seriesGameNumber?: number;
@@ -71,6 +71,6 @@ export type ScheduleRestTeamObject = {
     name?: string;
     link?: string;
   };
-  splitSquad?: false;
+  splitSquad?: boolean;
   seriesNumber?: number;
 };
