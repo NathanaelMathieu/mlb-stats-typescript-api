@@ -67,7 +67,7 @@ export type { ResponseEntity } from "./ResponseEntity";
 export type { RosterEntryRestObject } from "./RosterEntryRestObject";
 export type { RosterRestObject } from "./RosterRestObject";
 export type { ScheduleItemRestObject } from "./ScheduleItemRestObject";
-export type { ScheduleRestObject } from "./ScheduleRestObject";
+export * from "./ScheduleRestObject";
 export type { ScheduleSeriesRestObject } from "./ScheduleSeriesRestObject";
 export type { SchoolRestObject } from "./SchoolRestObject";
 export type { SeasonRestObject } from "./SeasonRestObject";
