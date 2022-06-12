@@ -15,7 +15,7 @@ export type GameRestObject = {
       pk?: number,
       type?: string,
       doubleHeader?: string,
-      id?: string,
+      id?: number,
       gamedayType?: string,
       tiebreaker?: string,
       gameNumber?: number,
@@ -57,7 +57,7 @@ export type GameRestObject = {
         country?: string
       },
       timeZone?: {
-        id?: string,
+        id?: number,
         offset?: number,
         tz?: string
       },

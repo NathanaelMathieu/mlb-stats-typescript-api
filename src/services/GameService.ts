@@ -78,7 +78,7 @@ export class GameService {
    * @throws ApiError
    */
 	public static liveGameV1(
-		gamePk: string,
+		gamePk: number,
 		options?: {
       timecode?: string;
       hydrate?: any;
