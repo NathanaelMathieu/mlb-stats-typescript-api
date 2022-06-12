@@ -1,4 +1,4 @@
-import type { Boxscore } from "../models/Boxscore";
+import type { BoxscoreRestObject } from "../models/BoxscoreRestObject";
 import type { GameContextRestObject } from "../models/GameContextRestObject";
 import type { GameRestObject } from "../models/GameRestObject";
 import type { Linescore } from "../models/Linescore";
@@ -905,7 +905,7 @@ export class GameService {
       timecode?: string;
       fields?: Array<string>;
     }
-	): CancelablePromise<Boxscore> {
+	): CancelablePromise<BoxscoreRestObject> {
 		return __request(OpenAPI, {
 			method: "GET",
 			url: "/api/v1/game/{gamePk}/boxscore",

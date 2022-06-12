@@ -13,7 +13,7 @@ export * from "./BaseballDraftRestObject";
 export * from "./BaseballDraftRoundRestObject";
 export * from "./BaseballPersonRestObject";
 export * from "./BaseballTeamRestObject";
-export * from "./Boxscore";
+export * from "./BoxscoreRestObject";
 export * from "./BroadcastRestObject";
 export * from "./Conference";
 export * from "./ConferenceRestObject";
