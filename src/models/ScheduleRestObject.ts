@@ -17,6 +17,13 @@ export type ScheduleRestDateObject = {
   events?: Array<any>;
 };
 
+export enum GameStatusCode {
+  Scheduled = "S",
+  Pregame = "P",
+  InProgress = "I",
+  Finished = "F",
+}
+
 export type ScheduleRestGameObject = {
   gamePk?: number;
   link?: string;
@@ -28,7 +35,7 @@ export type ScheduleRestGameObject = {
     abstractGameState?: "Preview" | "Live" | "Final";
     codedGameState?: "S" | "P" | "I" | "F";
     detailedState?: "Scheduled" | "Pre-Game" | "In Progress" | "Finished";
-    statusCode?: "S" | "P" | "I" | "F";
+    statusCode?: GameStatusCode;
     startTimeTBD?: boolean;
     abstractGameCode?: "P" | "L" | "F";
   };
