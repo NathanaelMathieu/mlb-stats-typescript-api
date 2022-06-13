@@ -17,12 +17,19 @@ export type ScheduleRestDateObject = {
   events?: Array<any>;
 };
 
-export enum GameStatusCode {
-  Scheduled = "S",
-  Pregame = "P",
-  InProgress = "I",
-  Finished = "F",
-}
+export type GameStatusCode = "S" | "P" | "I" | "F";
+export type GameDetailedState = "Scheduled" | "Pre-Game" | "In Progress" | "Finished";
+export type AbstractGameCode = "P" | "L" | "F";
+export type AbstractGameState = "Preview" | "Live" | "Final";
+
+export type GameStatus = {
+  abstractGameState?: AbstractGameState;
+  codedGameState?: GameStatusCode;
+  detailedState?: GameDetailedState;
+  statusCode?: GameStatusCode;
+  startTimeTBD?: boolean;
+  abstractGameCode?: AbstractGameCode;
+};
 
 export type ScheduleRestGameObject = {
   gamePk?: number;
@@ -31,14 +38,7 @@ export type ScheduleRestGameObject = {
   season?: string;
   gameDate?: string;
   officialDate?: string;
-  status?: {
-    abstractGameState?: "Preview" | "Live" | "Final";
-    codedGameState?: "S" | "P" | "I" | "F";
-    detailedState?: "Scheduled" | "Pre-Game" | "In Progress" | "Finished";
-    statusCode?: GameStatusCode;
-    startTimeTBD?: boolean;
-    abstractGameCode?: "P" | "L" | "F";
-  };
+  status?: GameStatus;
   teams?: {
     away?: ScheduleRestTeamObject;
     home?: ScheduleRestTeamObject;

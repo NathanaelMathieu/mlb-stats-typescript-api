@@ -1,4 +1,5 @@
 import { BoxscoreRestObject } from "./BoxscoreRestObject";
+import { GameStatus } from "./ScheduleRestObject";
 
 export type GameRestObject = {
   copyright?: string,
@@ -31,14 +32,7 @@ export type GameRestObject = {
       time?: string,
       ampm?: string
     },
-    status?: {
-      abstractGameState?: string,
-      codedGameState?: string,
-      detailedState?: string,
-      statusCode?: string,
-      startTimeTBD?: boolean,
-      abstractGameCode?: string
-    },
+    status?: GameStatus,
     teams?: {
       away?: GameTeamRestObject,
       home?: GameTeamRestObject,
