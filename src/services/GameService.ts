@@ -87,7 +87,7 @@ export class GameService {
 	): CancelablePromise<GameRestObject> {
 		return __request(OpenAPI, {
 			method: "GET",
-			url: "/v1.1/game/{gamePk}/feed/live",
+			url: "/api/v1.1/game/{gamePk}/feed/live",
 			path: {
 				gamePk: gamePk,
 			},
@@ -150,7 +150,7 @@ export class GameService {
 	): CancelablePromise<ResponseEntity> {
 		return __request(OpenAPI, {
 			method: "GET",
-			url: "/v1.1/game/{gamePk}/feed/live/diffPatch",
+			url: "/api/v1.1/game/{gamePk}/feed/live/diffPatch",
 			path: {
 				gamePk: gamePk,
 			},
@@ -190,7 +190,7 @@ export class GameService {
 	public static liveTimestampv11(gamePk: string): CancelablePromise<string> {
 		return __request(OpenAPI, {
 			method: "GET",
-			url: "/v1.1/game/{gamePk}/feed/live/timestamps",
+			url: "/api/v1.1/game/{gamePk}/feed/live/timestamps",
 			path: {
 				gamePk: gamePk,
 			},
